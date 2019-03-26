@@ -1,0 +1,13 @@
+virtualenvを使う必要もなく
+$ conda create -n py27 python=2.7 anaconda
+とすれば，{Anaconda3のパス}/env/py27 が作成される．
+
+python2.7を使いたくなったら下記コマンド．
+
+windowsでは
+$ activate py27
+
+python3に戻すときは下記コマンド．
+$ deactivate
+
+以上，非常に簡単.　Anaconda素晴らしい．

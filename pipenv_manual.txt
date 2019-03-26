@@ -1,0 +1,92 @@
+スクリプトをプロジェクトのディレクトリに進んでおく。
+
+まずは新規のプロジェクトの初期化方法です．
+プロジェクトのディレクトリに移動して次のコマンドを実行すると，自動で仮想環境が作成されてPipfileというファイルが生成されます．Pythonのバージョンの指定は3.7など，より詳細に指定もできます．
+
+$ pipenv --python 3    # Python3系で初期化する例です
+
+パッケージのインストールは次のように行います．このときも（まだ作っていなければ）仮想環境が自動的に作られて，そこにパッケージがインストールされます．またpipenvからパッケージをインストールするとPipfileにパッケージが追加されます．
+
+$ pipenv install numpy    # numpyをインストールする例です
+
+これによって、Pipfileに、numpyが記述される。
+
+仮想環境関連の操作
+pipenvで作られた仮想環境へ入るには次のように行います．よく使う操作はscriptsに登録しておきたいですが，ちょっとした操作を行うときには知っておくと便利です．
+
+$ pipenv shell
+Launching subshell in virtual environment…
+(mypipenv-XXXXXXXX) $ exit    # 抜けるときはexit
+
+一回限りのコマンドなんかは、pipenv run を使うと便利です。
+
+pipenv run python main.py
+
+[pipenv install]と[pipenv update]と[pipenv sync]の違いと用途例
+[pipenv install]
+Pipfileに記載された内容の最新状態でパッケージをインストールし、その内容でPipfile.lockを作成する。
+新しく環境を作っていて、パッケージ最新状態でいれたい場合などに使う
+
+[pipenv update]
+Pipfileに記載された内容と実際にインストールされている状態を確認し、update出来るパッケージがあればupdateしてその状態でPipfile.lockを作成する
+既にpipenv installなどでパッケージをインストールしている環境で、なんかいろいろパッケージがアップデートされているっぽいのでアップデートしたい時などに使う
+
+[pipenv sync]
+パッケージのインストール状況をPipfile.lockと同じ内容にする。Pipfile.lockは変更されない
+作業を手伝ってくれる人がいたので、その人に自分と同じパッケージ環境を整えてもらいたい時などに使う
+
+requirements.txtからのインストール
+Pipenvの導入前にrequirements.txtでパッケージが管理されていた場合に，その内容からPipenvでインストールすることもできます．
+
+$ pipenv install -r ./requirements.txt
+
+Pipfile，Pipfile.lockから環境の再現
+すでに誰かが環境を作成してPipfileがgitなどで管理されていると，他のメンバーも簡単に環境を作成することができます．
+次の方法だと，Pipfileの中で管理されているパッケージがインストールされます．このときにインストールされた内容でPipfile.lockが更新されます．
+
+$ pipenv install
+
+スクリプトの登録
+独自のスクリプトを名前を付けて登録することができます．npmなんかでもよく使われていると思いますが，これが個人的にはチーム開発するときにとても便利だと思います．
+プロダクトのmainスクリプトのキックやUnitテストの実行，コードの整形やLintツールの実行などを登録しておけば，詳しいドキュメントをチームで共有する手間も省けますし，実際にメンバーに使ってもらいやすいという印象です．
+
+使い方は，Pipfileに[scripts]を用意して登録します．例えば次のような感じです．
+
+Pipfile
+[scripts]
+start = "python main.py runserver"
+test = "python -m unittest discover -v"
+format = "autopep8 -ivr ."
+lint = "flake8 --show-source ."
+スクリプトの実行は次のように行います．
+
+$ pipenv run start    # [scripts]のstartを実行する例です
+また，scriptsに登録するほどでもないPythonのコードを個別に実行するときは，次のように呼び出すことができます．
+
+$ pipenv run python spam.py    # spam.pyを仮想環境に入らずに実行する例です
+
+仮想環境内には実際にライブラリがインストールされています。 pipenv run pip freezeとすることで、現在の仮想環境内にあるライブラリを確認することができます。
+
+$ pipenv run pip freeze
+
+これを繰り返して仮想環境内がごちゃごちゃしてきたら、綺麗にしたいと思うはずです。 単純に仮想環境を空にしたいならば、pipenv --rm ができます。これは仮想環境そのものの削除です。
+
+$ pipenv --rm
+
+virtualenvを使う必要もなく
+$ conda create -n py27 python=2.7 anaconda
+とすれば，{Anaconda3のパス}/env/py27 が作成される．
+
+virtualenvを使う必要もなく
+$ conda create -n py36 python=3.6 anaconda
+とすれば，{Anaconda3のパス}/env/py36 が作成される．
+
+python2.7を使いたくなったら下記コマンド．
+
+windowsでは
+$ activate py27
+
+python3に戻すときは下記コマンド．
+$ deactivate
+
+以上，非常に簡単.　Anaconda素晴らしい．

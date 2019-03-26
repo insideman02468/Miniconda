@@ -1,0 +1,167 @@
+AWS Python3 Jupyter 開発環境構築手順
+VirtualBoxのときは、スナップショットで保存しよう
+Miniconda
+
+
+Miniconda をダウンロードし、インストールする。
+
+
+$ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+$ bash Miniconda3-latest-Linux-x86_64.sh
+
+一度、ターミナルを閉じる
+
+Welcome to Miniconda3 4.5.11conda -V
+
+$ which conda
+
+~/miniconda3/bin/conda
+
+vimで
+vimは、iでインサート
+ESCでコントロールモードに移行する。そして:wqで上書き保存.
+
+vi ~/.bashrc
+
+.bashrcに以下を追加
+export PATH="~/miniconda3/bin/conda:$PATH"
+
+source ~/.bashrc
+
+condaのパスが通る。
+
+AWSでのpython3の切り替え
+$ vi ~/.bashrc
+
+python36に書き換え
+その後、vimを保存し、
+$ source ~/.bashrc
+
+Basemapのインストール
+conda install -c conda-forge basemap
+conda install -c conda-forge basemap-data-hires
+
+other packages
+
+conda install jupyter numpy pandas math pygrib matplotlib netCDF4
+
+
+
+Jupyterにパスワードを設定する
+これで終わり
+
+$ jupyter notebook --generate-config
+$ jupyter notebook password
+
+JupyterをCloud9で開く
+jupyter notebook --ip 0.0.0.0 --port 8080 --no-browser
+
+普通のpython
+
+目次
+・python3 インストール(pyenvを使用)
+・TA-Lib インストール
+・時刻設定(日本時間)
+
+はじめにパッケージのインストールをします。
+
+$ sudo yum install gcc gcc-c++ make git openssl-devel bzip2-devel zlib-devel readline-devel sqlite-devel
+pyenvのインストールをします。
+※pyenvとは違うバージョンのpythonを複数入れることができコマンドで切り替えることができます。
+デフォルトでインストールされるものは必ずしも最新でない場合があるのと、
+特定のバージョンで使いたい場合などpyenvで構築しておくと簡単に作ることができます。
+
+$ cd ~
+$ git clone https://github.com/yyuu/pyenv.git $HOME/.pyenv
+$ cd $HOME/.pyenv
+$ mkdir shims
+$ mkdir versions
+pyenvのバージョンアップ
+※新しいバージョンのpythonをインストール場合はバージョンアップが必要です。
+
+$ cd $HOME/.pyenv
+$ git fetch --all
+$ git pull
+環境変数を変更します。
+
+$ cd ~
+$ sed -i -e 's/alias python/#alias python/g' ~/.bashrc
+ターミナルでcat 以降をコピー・アンド・ペーストします。
+
+$ cat << 'EOF' >> ~/.bashrc
+export PYENV_ROOT="$HOME/.pyenv"
+if [ -d "${PYENV_ROOT}" ]; then
+export PATH=${PYENV_ROOT}/bin:$PATH
+eval "$(pyenv init -)"
+fi
+EOF
+.bashrcを読み込みます。(ダメな場合は下の手順でターミナルを開きます）
+
+$ source ~/.bashrc
+$ exec bash
+
+New Terminal を開きます。
+
+pyenv で python 3.6.5をインストールします。
+※ここでバージョンが2.7と出ている場合は、ターミナルを新しく開いてください。
+※pyenv install --list でインストール可能なバージョンを見れます。
+
+$ pyenv install --list
+$ pyenv install 3.6.5
+$ pyenv global 3.6.5
+
+$ python --version
+$ pip --version
+$ pyenv version
+コマンドの結果です。下記のようになっていればOKです。
+
+$ python --version
+Python 3.6.5
+$ pip --version
+pip 9.0.3 from /home/ec2-user/.pyenv/versions/3.6.5/lib/python3.6/site-packages (python 3.6)
+$ pyenv version
+3.6.5 (set by /home/ec2-user/.pyenv/version)
+pip のアップデートをします。
+
+$ pip install --upgrade pip
+ccxt, jsonのインストールをします。
+※websocket-clientの最新でデータの取得に不具合があるためバージョン指定
+
+$ pip install ccxt
+$ pip install simplejson
+$ pip install pybitflyer
+$ pip install requests
+$ pip install datetime
+$ pip install pandas
+$ pip install websocket-client==0.47
+aws, cloud9でta-libのインストール
+
+$ cd ~
+$ wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
+$ tar xvzf ta-lib-0.4.0-src.tar.gz 
+$ cd ta-lib
+$ ./configure --prefix=/usr
+$ make
+$ sudo make install
+
+$ sudo bash -c "echo "/usr/local/lib64" >> /etc/ld.so.conf"
+$ sudo /sbin/ldconfig
+
+$ pip install ta-lib
+以降、pip install ***でインストールできます。
+
+AWS EC2のタイムゾーンを変更します。
+
+$ sudo sed -i -e 's/ZONE="UTC"/ZONE="Japan"/g' /etc/sysconfig/clock
+時間帯ファイルの変更
+
+$ sudo ln -sf /usr/share/zoneinfo/Japan /etc/localtime
+日本時間になっているか確認します。
+
+$ date
+Thu Apr  5 20:22:37 JST 2018
+botなどを置いてるディレクトリへ移動
+
+$ cd ~/environment
+$ python test.py
+

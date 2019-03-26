@@ -1,0 +1,31 @@
+cd C:\Users\EES\Downloads\My_research_installer\Weather
+
+wgrib2 [ファイル名]
+でデータの中身を取得できる。
+
+wgrib2 -V [ファイル名]
+でデータの詳細を確認できる。
+
+wgrib2 -d 1 [ファイル名]
+このように、指定された番号に対応するデータのみ取り出せます。
+
+wgrib2 -d 1 [ファイル名] -grib [出力ファイル名.grib]
+これで、idが1のデータを抽出できる
+
+gdas.t00z.pgrb2.0p25.f000
+
+ファイルを、json形式で出力してみます。
+JSON 形式のときは、.\weacast-grib2json\bin
+に見たいファイルをコピーして
+
+grib2json [ファイル名]
+
+grib2json --names --data -o [好きなファイル名] [ファイル名]
+
+でJSON形式で出力できる。
+
+CSV形式で出力する場合
+wgrib2 [filename] -d [id] -csv [好きなファイル名.csv]
+
+wgrib2 data -order we:ns -no_header -bin new_data
+デフォルトでNS→SN（方角）に変換されるので，指定してNSのままにする．
