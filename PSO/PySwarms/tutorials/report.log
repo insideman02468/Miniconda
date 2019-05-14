@@ -1,0 +1,481 @@
+2019-05-09 12:28:33,660 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 12:28:45,755 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2.473910722088791e-46, best pos: [-1.57144660e-23 -6.68305358e-25]
+2019-05-09 12:28:57,049 - pyswarms.single.local_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9, 'k': 2, 'p': 2}
+2019-05-09 12:29:09,367 - pyswarms.single.local_best - INFO - Optimization finished | best cost: 4.865010866937685e-41, best pos: [1.38659893e-21 7.00867604e-21]
+2019-05-09 12:29:45,337 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 12:29:57,425 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 0.0, best pos: [ 1.35848286e-09 -3.05492898e-09]
+2019-05-09 12:30:41,890 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 12:30:54,009 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 3.6107037174593383e-16, best pos: [0.99999998 0.99999996]
+2019-05-09 12:30:54,337 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 12:31:06,656 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 1.1403477423035489e-27, best pos: [1. 1.]
+2019-05-09 12:31:06,674 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 12:31:18,975 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2.959460989743202e-29, best pos: [1. 1.]
+2019-05-09 12:41:49,216 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 12:41:50,439 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 1.76882143473995e-08, best pos: [ 8.33588891e-05 -1.03631607e-04]
+2019-05-09 12:51:22,190 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 12:51:23,417 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 7.635292743559319e-10, best pos: [-2.73412172e-05 -3.99838908e-06]
+2019-05-09 12:51:26,493 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 12:51:26,494 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpcmi3gwna/temp.m4v']
+2019-05-09 12:51:44,318 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 12:51:44,320 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpnff8fkxc/temp.m4v']
+2019-05-09 13:10:27,218 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 13:10:41,280 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 13:11:32,763 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 13:11:45,156 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 15:28:12,014 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 15:28:25,329 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 15:29:20,580 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 15:29:21,824 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2.421620798356845e-09, best pos: [ 4.79968892e-06 -4.89753385e-05]
+2019-05-09 15:30:20,028 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 15:30:46,454 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 15:30:47,684 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 1.3943430553845897e-07, best pos: [5.00036237 9.99990988]
+2019-05-09 15:32:20,314 - pyswarms.utils.plotters.plotters - ERROR - Please check your input type
+Traceback (most recent call last):
+  File "/home/yuichiro/miniconda3/envs/py367/lib/python3.6/site-packages/pyswarms/utils/plotters/plotters.py", line 217, in plot_contour
+    xx, yy, zz, = _mesh(mesher)
+  File "/home/yuichiro/miniconda3/envs/py367/lib/python3.6/site-packages/pyswarms/utils/plotters/plotters.py", line 408, in _mesh
+    z = mesher.func(xypairs)
+TypeError: criterion() missing 2 required positional arguments: 'a' and 'b'
+2019-05-09 15:33:24,869 - pyswarms.utils.plotters.plotters - ERROR - Please check your input type
+Traceback (most recent call last):
+  File "/home/yuichiro/miniconda3/envs/py367/lib/python3.6/site-packages/pyswarms/utils/plotters/plotters.py", line 217, in plot_contour
+    xx, yy, zz, = _mesh(mesher)
+  File "/home/yuichiro/miniconda3/envs/py367/lib/python3.6/site-packages/pyswarms/utils/plotters/plotters.py", line 408, in _mesh
+    z = mesher.func(xypairs)
+TypeError: criterion() missing 2 required positional arguments: 'a' and 'b'
+2019-05-09 15:34:04,775 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 15:34:05,987 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 1.0106533918343454e-07, best pos: [4.99999153 9.99968221]
+2019-05-09 15:36:19,627 - pyswarms.utils.plotters.plotters - ERROR - Please check your input type
+Traceback (most recent call last):
+  File "/home/yuichiro/miniconda3/envs/py367/lib/python3.6/site-packages/pyswarms/utils/plotters/plotters.py", line 217, in plot_contour
+    xx, yy, zz, = _mesh(mesher)
+  File "/home/yuichiro/miniconda3/envs/py367/lib/python3.6/site-packages/pyswarms/utils/plotters/plotters.py", line 408, in _mesh
+    z = mesher.func(xypairs)
+TypeError: criterion() missing 2 required positional arguments: 'a' and 'b'
+2019-05-09 15:36:37,953 - pyswarms.utils.plotters.plotters - ERROR - Please check your input type
+Traceback (most recent call last):
+  File "/home/yuichiro/miniconda3/envs/py367/lib/python3.6/site-packages/pyswarms/utils/plotters/plotters.py", line 217, in plot_contour
+    xx, yy, zz, = _mesh(mesher)
+  File "/home/yuichiro/miniconda3/envs/py367/lib/python3.6/site-packages/pyswarms/utils/plotters/plotters.py", line 408, in _mesh
+    z = mesher.func(xypairs)
+TypeError: criterion() missing 2 required positional arguments: 'a' and 'b'
+2019-05-09 15:37:22,159 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 15:37:23,369 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 1.1064962531145423e-08, best pos: [5.00002857 9.99989876]
+2019-05-09 15:38:09,090 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 15:38:10,297 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 6.152777182806379e-08, best pos: [5.00024793 9.99999234]
+2019-05-09 15:38:19,545 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 15:38:19,546 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp4qjfv9g7/temp.m4v']
+2019-05-09 15:45:54,659 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 15:45:55,889 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 4.325867592417365e-08, best pos: [5.00015761 9.99986429]
+2019-05-09 15:46:22,870 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 15:46:22,872 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp4oqhomr2/temp.m4v']
+2019-05-09 15:47:21,435 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 15:47:22,657 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 5.418237876742195e-07, best pos: [ 4.99968799 10.00066669]
+2019-05-09 15:47:23,707 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 15:47:23,708 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmptgi9pai2/temp.m4v']
+2019-05-09 16:08:53,282 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 16:08:54,488 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 5.949810933523545e-08, best pos: [5.00004393 9.99976007]
+2019-05-09 16:08:55,010 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 16:08:55,011 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp4jbwlc3s/temp.m4v']
+2019-05-09 16:09:01,384 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 16:09:01,385 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpz0frrlhv/temp.m4v']
+2019-05-09 16:13:24,288 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 16:13:24,289 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp0exyq8b3/temp.m4v']
+2019-05-09 16:15:37,373 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 16:15:37,375 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpwzonhe_s/temp.m4v']
+2019-05-09 16:40:03,345 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 16:40:04,608 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 7.897338769906501e-07, best pos: [5.00087877 9.99986771]
+2019-05-09 16:40:05,141 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 16:40:05,142 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpp_edk7fn/temp.m4v']
+2019-05-09 16:40:11,710 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 16:40:11,712 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp977iamry/temp.m4v']
+2019-05-09 16:42:06,415 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 16:42:07,625 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.00000001706194, best pos: [ 5.00009804 10.00008631]
+2019-05-09 16:42:08,190 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 16:42:08,191 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp4t8vu1i8/temp.m4v']
+2019-05-09 16:42:14,802 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 16:42:14,806 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpb12ydpp4/temp.m4v']
+2019-05-09 16:48:17,461 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 16:48:18,670 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.00000003278851, best pos: [5.00014266 9.99988848]
+2019-05-09 16:48:21,642 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 16:48:21,644 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpnqk32rrx/temp.m4v']
+2019-05-09 16:48:35,309 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 16:48:35,310 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp76afwf2k/temp.m4v']
+2019-05-09 16:53:39,928 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 16:53:41,137 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.000000062652393, best pos: [4.99977141 9.99989802]
+2019-05-09 16:53:41,668 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 16:53:41,670 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpw15easnp/temp.m4v']
+2019-05-09 16:53:47,866 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 16:53:47,867 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpbdce2xv4/temp.m4v']
+2019-05-09 16:57:19,970 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 16:57:19,971 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp8fpbijys/temp.m4v']
+2019-05-09 16:57:53,075 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 16:57:54,293 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.000000831051066, best pos: [ 5.00032881 10.00085025]
+2019-05-09 16:58:24,665 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 16:58:24,667 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp2uupefb1/temp.m4v']
+2019-05-09 17:04:03,465 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 17:04:04,715 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.000000005963596, best pos: [4.99992914 9.99996931]
+2019-05-09 17:10:04,785 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 17:10:04,786 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpwe11pug4/temp.m4v']
+2019-05-09 17:12:30,516 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 17:12:31,727 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.000000072469655, best pos: [ 4.99973118 10.00001436]
+2019-05-09 17:13:15,924 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 17:13:17,163 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.000000006283877, best pos: [4.9999426  9.99994533]
+2019-05-09 17:14:15,731 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 17:14:16,967 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.000000167606107, best pos: [ 4.99959408 10.00005325]
+2019-05-09 17:24:52,924 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 17:24:54,138 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.00000005979252, best pos: [ 4.99993402 10.00023545]
+2019-05-09 17:24:57,190 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 17:24:57,192 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpewsivpnd/temp.m4v']
+2019-05-09 17:25:12,430 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 17:25:12,431 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp64ngildr/temp.m4v']
+2019-05-09 17:28:24,530 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 17:28:25,774 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.000000232158353, best pos: [4.99957109 9.99978047]
+2019-05-09 17:29:49,915 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 17:29:51,138 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.000000159044568, best pos: [ 5.00033943 10.00020936]
+2019-05-09 17:29:57,399 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 17:29:57,400 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp6atgnftv/temp.m4v']
+2019-05-09 17:30:56,258 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 17:30:57,523 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.000000037234347, best pos: [ 5.00019267 10.00001052]
+2019-05-09 17:30:59,807 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 17:30:59,809 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp278lbktz/temp.m4v']
+2019-05-09 17:31:35,136 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 17:31:35,137 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpl1e33kij/temp.m4v']
+2019-05-09 17:32:10,228 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 17:32:10,229 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpdehjh4mm/temp.m4v']
+2019-05-09 17:33:39,444 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 17:33:39,445 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp3xesy5mu/temp.m4v']
+2019-05-09 17:33:49,109 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 17:33:50,360 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.000000304230776, best pos: [ 4.99952732 10.00028426]
+2019-05-09 17:33:53,041 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 17:33:53,043 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpw8yzyie9/temp.m4v']
+2019-05-09 17:35:09,624 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 17:35:10,830 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.000000031671856, best pos: [5.00017734 9.9999851 ]
+2019-05-09 17:35:34,364 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 17:35:35,578 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.000000037667885, best pos: [4.99986869 9.99985708]
+2019-05-09 17:46:32,299 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 17:46:33,571 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.000000056643023, best pos: [ 4.99983151 10.00016809]
+2019-05-09 17:46:39,325 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 17:46:39,327 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpbm61vak7/temp.m4v']
+2019-05-09 17:53:00,468 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 17:53:01,700 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.000000063840481, best pos: [4.9998439  9.99980132]
+2019-05-09 17:53:02,166 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 17:53:02,167 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp0nlcz6wh/temp.m4v']
+2019-05-09 17:53:07,494 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 17:53:07,495 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpc7wb16fk/temp.m4v']
+2019-05-09 17:54:26,064 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 17:54:26,065 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp9ev6zlgx/temp.m4v']
+2019-05-09 17:56:33,176 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 17:56:34,433 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.000000012521681, best pos: [5.00006413 9.9999083 ]
+2019-05-09 17:56:34,773 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 17:56:34,775 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpsf7a6yub/temp.m4v']
+2019-05-09 17:56:40,698 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 17:56:40,699 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp912qxnl6/temp.m4v']
+2019-05-09 17:57:19,748 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 17:57:19,750 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp54lodzdl/temp.m4v']
+2019-05-09 17:58:19,360 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 17:58:20,609 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.000000043041608, best pos: [4.99987797 9.99983222]
+2019-05-09 17:58:20,956 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 17:58:20,959 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmprvtu8x7t/temp.m4v']
+2019-05-09 17:58:26,475 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 17:58:26,480 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpw80x8b_o/temp.m4v']
+2019-05-09 18:01:22,446 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 18:01:23,698 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.000000384686036, best pos: [ 4.99941892 10.00021686]
+2019-05-09 18:01:24,095 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 18:01:24,097 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpl31cgs77/temp.m4v']
+2019-05-09 18:01:30,215 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 18:01:30,217 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp5_y1rvhc/temp.m4v']
+2019-05-09 18:03:00,983 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 18:03:02,228 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.00000007930933, best pos: [ 5.00021912 10.00017691]
+2019-05-09 18:03:02,548 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 18:03:02,550 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpaqux1plx/temp.m4v']
+2019-05-09 18:03:07,191 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 18:03:07,193 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp9xvbgsph/temp.m4v']
+2019-05-09 18:14:26,343 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 18:14:27,620 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.000000052042267, best pos: [ 5.00015412 10.0001682 ]
+2019-05-09 18:15:27,234 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 18:15:28,528 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.000000612307169, best pos: [ 5.00078201 10.00002758]
+2019-05-09 18:18:10,186 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 18:18:11,421 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 15.000000064599654, best pos: [4.99989041 9.99977068]
+2019-05-09 18:18:11,761 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 18:18:11,764 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpwf759cf0/temp.m4v']
+2019-05-09 18:18:33,024 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 18:18:33,025 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpvpyagg1m/temp.m4v']
+2019-05-09 21:15:09,649 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.7, 'w': 0.7}
+2019-05-09 21:15:10,928 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 5912.8878922473505, best pos: [34.05165429 71.40804017]
+2019-05-09 21:16:31,498 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.7, 'w': 0.7}
+2019-05-09 21:16:44,309 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 10868.205810057381, best pos: [ 18.24536059 104.79982173]
+2019-05-09 21:16:44,659 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:16:44,661 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpg5070g00/temp.m4v']
+2019-05-09 21:17:44,696 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.7, 'w': 0.7}
+2019-05-09 21:17:57,511 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 47.241139205348226, best pos: [5.36367461 7.01990867]
+2019-05-09 21:18:31,013 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.7, 'w': 0.7}
+2019-05-09 21:18:43,621 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 49.35479155887357, best pos: [5.61888972 7.0020645 ]
+2019-05-09 21:18:43,944 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:18:43,946 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpobbfwshi/temp.m4v']
+2019-05-09 21:19:36,833 - pyswarms.single.global_best - INFO - Optimize for 400 iters with {'c1': 0.7, 'c2': 0.7, 'w': 0.5}
+2019-05-09 21:19:42,030 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 44.95252563980677, best pos: [5.0126171  7.08443012]
+2019-05-09 21:19:48,284 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:19:48,288 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp_cxwm7_u/temp.m4v']
+2019-05-09 21:20:39,265 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:20:39,266 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp65r5uw4h/temp.m4v']
+2019-05-09 21:21:29,972 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.7, 'c2': 0.7, 'w': 0.5}
+2019-05-09 21:21:31,226 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 45.09228092645685, best pos: [5.10930066 7.02055066]
+2019-05-09 21:21:31,551 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:21:31,552 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp3puv9zt0/temp.m4v']
+2019-05-09 21:21:36,991 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:21:36,993 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpg0ims5o6/temp.m4v']
+2019-05-09 21:22:40,918 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.7, 'c2': 0.7, 'w': 0.5}
+2019-05-09 21:22:42,165 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 156.96777937105693, best pos: [10.61493115  9.84352462]
+2019-05-09 21:22:47,969 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:22:47,971 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp7orhc3fk/temp.m4v']
+2019-05-09 21:22:53,128 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:22:53,130 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmplwxmtcck/temp.m4v']
+2019-05-09 21:23:34,067 - pyswarms.single.global_best - INFO - Optimize for 200 iters with {'c1': 0.7, 'c2': 0.7, 'w': 0.5}
+2019-05-09 21:23:36,525 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 46.93057664350172, best pos: [5.17000558 7.15185696]
+2019-05-09 21:23:36,910 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:23:36,912 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpyrm4kmoi/temp.m4v']
+2019-05-09 21:23:46,494 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:23:46,495 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpfrkh6ikc/temp.m4v']
+2019-05-09 21:29:27,407 - pyswarms.single.global_best - INFO - Optimize for 200 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 21:29:29,925 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 46.56009349058378, best pos: [5.26062795 7.04054987]
+2019-05-09 21:29:30,263 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:29:30,265 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpb02hni6m/temp.m4v']
+2019-05-09 21:29:41,359 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:29:41,363 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmptlwxz1nn/temp.m4v']
+2019-05-09 21:32:28,656 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 21:32:29,899 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 7.895359662736745e-09, best pos: [-8.20728404e-05 -3.40500886e-05]
+2019-05-09 21:32:30,220 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:32:30,222 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp9s_nm5k3/temp.m4v']
+2019-05-09 21:32:35,115 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:32:35,116 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp_e16w3zm/temp.m4v']
+2019-05-09 21:33:05,791 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 21:33:07,049 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 8.09780755112147e-09, best pos: [-6.03153554e-05  6.67822241e-05]
+2019-05-09 21:33:07,425 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:33:07,427 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpdencue5m/temp.m4v']
+2019-05-09 21:33:13,870 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:33:13,871 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpqfuj0k6j/temp.m4v']
+2019-05-09 21:33:32,616 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 21:33:33,922 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 3.4770251234179857e-09, best pos: [-5.89644104e-05  4.72683373e-07]
+2019-05-09 21:33:34,268 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:33:34,269 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpjflpcd35/temp.m4v']
+2019-05-09 21:33:40,569 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:33:40,571 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpwmdhbxhz/temp.m4v']
+2019-05-09 21:34:08,720 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 21:34:09,942 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 6.049480076586138e-10, best pos: [1.95915014e-05 1.48701405e-05]
+2019-05-09 21:34:12,805 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:34:12,806 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpvcf88m0p/temp.m4v']
+2019-05-09 21:34:30,508 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:34:30,509 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpzuvwy7fh/temp.m4v']
+2019-05-09 21:35:01,266 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 21:35:02,498 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 1.8347690083225111e-07, best pos: [0.00040102 0.00015053]
+2019-05-09 21:35:10,563 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:35:10,565 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp1zqwty5p/temp.m4v']
+2019-05-09 21:36:50,009 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:36:50,011 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp7ky1o641/temp.m4v']
+2019-05-09 21:37:51,845 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:37:51,846 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpzpu9125e/temp.m4v']
+2019-05-09 21:39:05,127 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:39:05,128 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpwia20wwd/temp.m4v']
+2019-05-09 21:39:35,767 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:39:35,768 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpy35rnscw/temp.m4v']
+2019-05-09 21:40:14,911 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:40:14,912 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpc8cxz58p/temp.m4v']
+2019-05-09 21:40:21,426 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 21:40:22,641 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2.152127090494408e-09, best pos: [-3.70882540e-05  2.78673377e-05]
+2019-05-09 21:40:23,034 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:40:23,036 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpys5t2hz_/temp.m4v']
+2019-05-09 21:42:07,959 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 21:42:09,207 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 6.120188954248642e-09, best pos: [-1.18971494e-05  7.73217097e-05]
+2019-05-09 21:42:10,878 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 21:42:12,121 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 4.0997623010216875e-08, best pos: [ 0.00013817 -0.00014801]
+2019-05-09 21:44:50,952 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 21:44:52,164 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 9.0109555599375e-09, best pos: [-7.48528413e-05 -5.83781441e-05]
+2019-05-09 21:44:57,565 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:44:57,567 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpaw1vemjc/temp.m4v']
+2019-05-09 21:49:00,537 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 21:49:01,769 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 1.1434271180444363e-09, best pos: [ 1.94151665e-05 -2.76853468e-05]
+2019-05-09 21:49:19,016 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 21:49:20,272 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 1.932340172936041e-10, best pos: [ 2.78611457e-06 -1.36187952e-05]
+2019-05-09 21:49:21,251 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:49:21,253 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpsfytx_5d/temp.m4v']
+2019-05-09 21:49:29,534 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:49:29,536 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpd2kss2_l/temp.m4v']
+2019-05-09 21:50:29,710 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 21:50:30,940 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 7.470827552533156e-09, best pos: [1.49749672e-05 8.51268343e-05]
+2019-05-09 21:51:42,025 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:51:42,026 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpl73siqkp/temp.m4v']
+2019-05-09 21:51:49,372 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:51:49,373 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmps45dwnj_/temp.m4v']
+2019-05-09 21:52:29,021 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 21:52:30,257 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 8.053297450646671e-08, best pos: [-0.00018152  0.00021813]
+2019-05-09 21:52:32,401 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:52:32,402 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpcd9x6yj0/temp.m4v']
+2019-05-09 21:52:46,742 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:52:46,743 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp5073b96g/temp.m4v']
+2019-05-09 21:56:43,996 - pyswarms.single.global_best - INFO - Optimize for 200 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 21:56:46,546 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 46.18577752904791, best pos: [5.0835541  7.14882156]
+2019-05-09 21:57:00,396 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:57:00,398 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmphl3c94jd/temp.m4v']
+2019-05-09 21:57:45,810 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:57:45,811 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpuci5670t/temp.m4v']
+2019-05-09 21:58:59,885 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 21:59:01,155 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 56.58819311993973, best pos: [6.19462114 7.15791667]
+2019-05-09 21:59:03,811 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:59:03,813 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmptch2234p/temp.m4v']
+2019-05-09 21:59:13,482 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 21:59:13,483 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp6f9w_wro/temp.m4v']
+2019-05-09 22:01:21,237 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 22:01:22,545 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 11.112194417975076, best pos: [5.95113848 7.06236378]
+2019-05-09 22:01:25,313 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:01:25,315 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp0jpl1005/temp.m4v']
+2019-05-09 22:01:34,067 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:01:34,069 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpplpdta9g/temp.m4v']
+2019-05-09 22:03:04,988 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:03:04,990 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpvxg06kks/temp.m4v']
+2019-05-09 22:04:25,480 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 22:04:26,751 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 14.22523653289744, best pos: [6.50723472 7.3740177 ]
+2019-05-09 22:04:38,803 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:04:38,805 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpg8r26a6f/temp.m4v']
+2019-05-09 22:05:55,983 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 22:05:57,263 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 11.010439692879984, best pos: [5.66065078 7.2011517 ]
+2019-05-09 22:06:02,114 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:06:02,116 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp1mima3u1/temp.m4v']
+2019-05-09 22:06:12,287 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:06:12,289 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpz2z3l80g/temp.m4v']
+2019-05-09 22:07:49,318 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 22:07:50,532 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 20.395534366366043, best pos: [7.88783963 7.07678448]
+2019-05-09 22:07:55,563 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:07:55,565 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp8kh53zkm/temp.m4v']
+2019-05-09 22:08:05,521 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:08:05,523 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmptv9bpwmx/temp.m4v']
+2019-05-09 22:09:46,238 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 22:09:47,459 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 114.67940576841815, best pos: [11.59071012 15.29760975]
+2019-05-09 22:09:52,084 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:09:52,085 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpj_26tuyx/temp.m4v']
+2019-05-09 22:10:02,030 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:10:02,032 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpezyb0x0m/temp.m4v']
+2019-05-09 22:11:07,372 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:11:07,374 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp6qqyvyes/temp.m4v']
+2019-05-09 22:12:05,175 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 22:12:06,443 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 820.4504111804366, best pos: [ 9.98447798 12.36647463]
+2019-05-09 22:12:11,103 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:12:11,105 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmppamu0dtv/temp.m4v']
+2019-05-09 22:12:22,052 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:12:22,054 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpalr8d5wk/temp.m4v']
+2019-05-09 22:13:36,575 - pyswarms.single.global_best - INFO - Optimize for 400 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 22:13:41,459 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 575.3745397522783, best pos: [9.9203626  9.30506407]
+2019-05-09 22:13:46,727 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:13:46,728 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpivx765cz/temp.m4v']
+2019-05-09 22:14:23,230 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:14:23,231 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpu02ya88o/temp.m4v']
+2019-05-09 22:14:58,533 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 22:14:59,762 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 266.93309745868635, best pos: [6.08741974 8.05945886]
+2019-05-09 22:15:04,822 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:15:04,824 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp588ngav9/temp.m4v']
+2019-05-09 22:15:15,950 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:15:15,953 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpe9iu20qi/temp.m4v']
+2019-05-09 22:15:50,887 - pyswarms.single.global_best - INFO - Optimize for 200 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 22:15:53,319 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 533.0129491623811, best pos: [ 8.43358643 10.24802413]
+2019-05-09 22:15:57,968 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:15:57,970 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpdyfg7ku1/temp.m4v']
+2019-05-09 22:16:16,079 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:16:16,080 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpfgrv6brq/temp.m4v']
+2019-05-09 22:17:41,941 - pyswarms.single.global_best - INFO - Optimize for 200 iters with {'c1': 0.05, 'c2': 0.03, 'w': 0.9}
+2019-05-09 22:17:44,496 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 206.84653301813438, best pos: [5.37469019 7.44360205]
+2019-05-09 22:17:54,254 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:17:54,256 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpdjc4qvqo/temp.m4v']
+2019-05-09 22:18:51,494 - pyswarms.single.global_best - INFO - Optimize for 20 iters with {'c1': 0.05, 'c2': 0.03, 'w': 0.9}
+2019-05-09 22:18:51,747 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 289.9259542279159, best pos: [7.00787632 7.65910053]
+2019-05-09 22:19:05,691 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:19:05,692 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpujq12fvf/temp.m4v']
+2019-05-09 22:19:09,064 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:19:09,066 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp92kyc9_7/temp.m4v']
+2019-05-09 22:24:35,585 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:24:35,587 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpnkzfn4um/temp.m4v']
+2019-05-09 22:24:56,957 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:24:56,959 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp9hdrc9oq/temp.m4v']
+2019-05-09 22:28:41,352 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:28:41,354 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpvmao2y7l/temp.m4v']
+2019-05-09 22:30:37,462 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:30:37,464 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmphntybuvi/temp.m4v']
+2019-05-09 22:31:19,563 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:31:19,564 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpwp2e1rp3/temp.m4v']
+2019-05-09 22:31:50,541 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 22:31:51,767 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2.125619945832717e-09, best pos: [2.69014794e-05 3.74423604e-05]
+2019-05-09 22:31:53,972 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:31:53,973 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpwi9fem3t/temp.m4v']
+2019-05-09 22:32:10,086 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2019-05-09 22:32:11,304 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 7.529713853862684e-08, best pos: [0.00016036 0.00022267]
+2019-05-09 22:32:13,707 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:32:13,710 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp453c5ksn/temp.m4v']
+2019-05-09 22:32:30,028 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:32:30,030 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpi8x28kpa/temp.m4v']
+2019-05-09 22:34:12,388 - pyswarms.single.global_best - INFO - Optimize for 20 iters with {'c1': 0.05, 'c2': 0.03, 'w': 0.9}
+2019-05-09 22:34:12,660 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2880.3841398424447, best pos: [17.3294448  18.41138168]
+2019-05-09 22:34:17,382 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:34:17,384 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpqdxh3qeo/temp.m4v']
+2019-05-09 22:34:20,587 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:34:20,588 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp4up8lu76/temp.m4v']
+2019-05-09 22:35:19,116 - pyswarms.single.global_best - INFO - Optimize for 20 iters with {'c1': 0.05, 'c2': 0.03, 'w': 0.9}
+2019-05-09 22:35:19,374 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2569.90074163171, best pos: [20.12977613 12.60657663]
+2019-05-09 22:35:24,274 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:35:24,276 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp0fwonekj/temp.m4v']
+2019-05-09 22:35:27,789 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:35:27,790 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp3sgcfz8_/temp.m4v']
+2019-05-09 22:36:18,855 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:36:18,856 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpfqv5joi2/temp.m4v']
+2019-05-09 22:37:25,777 - pyswarms.single.global_best - INFO - Optimize for 20 iters with {'c1': 0.05, 'c2': 0.03, 'w': 0.9}
+2019-05-09 22:37:26,029 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 749.5160140104797, best pos: [12.46748605  8.18044326]
+2019-05-09 22:37:30,875 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:37:30,876 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpkbar77pf/temp.m4v']
+2019-05-09 22:37:34,677 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:37:34,678 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp8bz7i23k/temp.m4v']
+2019-05-09 22:38:01,768 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:38:01,772 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpwrpo3xjc/temp.m4v']
+2019-05-09 22:38:23,832 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:38:23,833 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpx7y1f418/temp.m4v']
+2019-05-09 22:38:57,257 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:38:57,259 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpr6u2itxx/temp.m4v']
+2019-05-09 22:41:32,090 - pyswarms.single.global_best - INFO - Optimize for 20 iters with {'c1': 0.05, 'c2': 0.03, 'w': 0.9}
+2019-05-09 22:41:32,329 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 486.33572059556866, best pos: [10.01845781  7.51246003]
+2019-05-09 22:41:37,000 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:41:37,002 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp80lf4ebf/temp.m4v']
+2019-05-09 22:41:51,029 - pyswarms.single.global_best - INFO - Optimize for 50 iters with {'c1': 0.05, 'c2': 0.03, 'w': 0.9}
+2019-05-09 22:41:51,636 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 279.14225615809335, best pos: [6.77153731 7.68564256]
+2019-05-09 22:41:56,602 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:41:56,603 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp0eb66l1g/temp.m4v']
+2019-05-09 22:42:50,922 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.05, 'c2': 0.03, 'w': 0.9}
+2019-05-09 22:42:52,147 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 236.5030045905715, best pos: [6.04567457 7.50615298]
+2019-05-09 22:42:57,094 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:42:57,096 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp998ie0iz/temp.m4v']
+2019-05-09 22:43:04,442 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.05, 'c2': 0.03, 'w': 0.9}
+2019-05-09 22:43:05,736 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 386.42295565609186, best pos: [7.35076486 9.04641709]
+2019-05-09 22:43:12,815 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.05, 'c2': 0.03, 'w': 0.9}
+2019-05-09 22:43:14,110 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 221.88221040229627, best pos: [5.81734922 7.40199879]
+2019-05-09 22:43:19,181 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:43:19,183 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp_nieso5i/temp.m4v']
+2019-05-09 22:44:16,264 - pyswarms.single.global_best - INFO - Optimize for 20 iters with {'c1': 0.05, 'c2': 0.03, 'w': 0.9}
+2019-05-09 22:44:16,512 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 3231.0235415799625, best pos: [25.45485452 12.55961277]
+2019-05-09 22:44:21,558 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:44:21,560 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpz_4_keo6/temp.m4v']
+2019-05-09 22:45:38,715 - pyswarms.single.global_best - INFO - Optimize for 20 iters with {'c1': 0.05, 'c2': 0.03, 'w': 0.9}
+2019-05-09 22:45:38,977 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 1251.0737684497733, best pos: [ 8.2346763  17.00959402]
+2019-05-09 22:45:43,873 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:45:43,875 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmp6nevx07l/temp.m4v']
+2019-05-09 22:46:33,117 - pyswarms.single.global_best - INFO - Optimize for 20 iters with {'c1': 0.05, 'c2': 0.03, 'w': 0.9}
+2019-05-09 22:46:33,365 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 718.0666666897312, best pos: [ 9.57420945 11.57383576]
+2019-05-09 22:46:38,197 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:46:38,199 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpbcmf_740/temp.m4v']
+2019-05-09 22:47:08,542 - pyswarms.single.global_best - INFO - Optimize for 20 iters with {'c1': 0.05, 'c2': 0.03, 'w': 0.9}
+2019-05-09 22:47:08,808 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 523.9464898613411, best pos: [9.80478634 8.59726494]
+2019-05-09 22:47:13,861 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:47:13,864 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmppfy1772i/temp.m4v']
+2019-05-09 22:47:27,139 - pyswarms.single.global_best - INFO - Optimize for 50 iters with {'c1': 0.05, 'c2': 0.03, 'w': 0.9}
+2019-05-09 22:47:27,784 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 253.3306097872912, best pos: [6.77599139 7.13557879]
+2019-05-09 22:47:32,720 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:47:32,721 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpl_nto71a/temp.m4v']
+2019-05-09 22:48:06,038 - pyswarms.single.global_best - INFO - Optimize for 100 iters with {'c1': 0.05, 'c2': 0.03, 'w': 0.9}
+2019-05-09 22:48:07,237 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 198.3742735047263, best pos: [5.13382739 7.44323249]
+2019-05-09 22:48:12,290 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+2019-05-09 22:48:12,291 - matplotlib.animation - INFO - MovieWriter.run: running command: ['ffmpeg', '-f', 'rawvideo', '-vcodec', 'rawvideo', '-s', '720x576', '-pix_fmt', 'rgba', '-r', '12.5', '-loglevel', 'quiet', '-i', 'pipe:', '-vcodec', 'h264', '-pix_fmt', 'yuv420p', '-y', '/tmp/tmpeghj3veq/temp.m4v']
