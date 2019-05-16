@@ -6,5 +6,5 @@ git remote add origin https://github.com/insideman02468/Miniconda.git
 git status
 git checkout master
 git add --all
-git commit -m "粒子の位置をランダムにリセットを公式通りにしたが、エラー時ランダムポップのほうが良い結果が出る。"
+git commit -m "粒子の位置をランダムにリセットは、いつもどおり乱数でポップアップさせる。"
 git push origin master
