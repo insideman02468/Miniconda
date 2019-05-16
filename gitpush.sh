@@ -6,5 +6,5 @@ git remote add origin https://github.com/insideman02468/Miniconda.git
 git status
 git checkout master
 git add --all
-git commit -m "Implement PSO microgrid without constraint"
+git commit -m "フローチャートもしくは、制約条件にエラーがある場合、粒子の位置をランダムにリセットがあやしい"
 git push origin master

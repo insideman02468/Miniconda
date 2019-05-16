@@ -26,6 +26,8 @@ def flowchart(PSO):
     PSO.check = "True"
     PSO.p_diesel = 0
     PSO.trashed_power = 0
+    PSO.battery_charging_power = 0
+    PSO.battery_discharging_power = 0
     PSO.flowchart_root= str(PSO.h)+"h"
     # 太陽光の発電量が需要より多いか確認
     if PSO.pv > PSO.np_demand[PSO.h]:
@@ -33,9 +35,11 @@ def flowchart(PSO):
         # バッテリーが過充電にならないかのチェック、過充電の場合、余った電気は捨てる。
         if PSO.p_battery+(PSO.pv-PSO.np_demand[PSO.h]) <= PSO.battery_max:
             PSO.p_battery = PSO.p_battery+(PSO.pv-PSO.np_demand[PSO.h])
+            PSO.battery_charging_power=PSO.battery_charging_power+PSO.pv-PSO.np_demand[PSO.h]
             PSO.flowchart_root=str(PSO.h)+"h: "+"Battery charge without diesel."
         else:
             PSO.trashed_power = ((PSO.pv-PSO.np_demand[PSO.h])+PSO.p_battery) - PSO.battery_max
+            PSO.battery_charging_power=PSO.battery_charging_power + (PSO.battery_max - PSO.p_battery)
             PSO.p_battery = PSO.battery_max
             PSO.flowchart_root=str(PSO.h)+"h: "+"Fullcharge ,no diesel, trashed "\
                  + str(round(PSO.trashed_power, 2))+"[kWh]."
@@ -45,10 +49,12 @@ def flowchart(PSO):
         # ディーゼルを使うかチェック
             #ディーゼルを使用しない。。
         if PSO.p_battery > (PSO.np_demand[PSO.h]-PSO.pv) and PSO.p_battery-(PSO.np_demand[PSO.h]-PSO.pv) > PSO.battery_min:
+            PSO.battery_discharging_power=PSO.np_demand[PSO.h]-PSO.pv
             PSO.p_battery = PSO.p_battery-(PSO.np_demand[PSO.h]-PSO.pv)
             PSO.flowchart_root= str(PSO.h)+"h: "+"discharging " \
             + str(round(PSO.np_demand[PSO.h]-PSO.pv, 3) )+"[kWh]."
         else:   #ディーゼルを使用する。
+            PSO.battery_discharging_power=PSO.p_battery-PSO.battery_min
             PSO.p_diesel = PSO.np_demand[PSO.h]-PSO.pv-(PSO.p_battery-PSO.battery_min)
             # ディーゼルの容量を超える場合はエラー
             if PSO.p_diesel > PSO.diesel_max:
@@ -69,17 +75,20 @@ def flowchart(PSO):
                   "trashed power": PSO.trashed_power,
                   "Check":PSO.check,
                   "flowchart_root":PSO.flowchart_root,
+                  "battery_charging_power":PSO.battery_charging_power,
+                  "battery_discharging_power": PSO.battery_discharging_power
                     }
 
     return PSO.parameters, PSO.check, PSO.flowchart_root
 
 def calc_cost(variables, initial_cost_parameters):
-    #initial_cost_parameters["PV_investment[yen/kWh]"]
-    #initial_cost_parameters["battery_investment[yen/kWh]"]
-    #initial_cost_parameters["diesel_investment[yen/kWh]"]
-    total_cost = variables["pv_cap_max"] * initial_cost_parameters["PV_investment[yen/kWh]"] \
-                +variables["battery_cap_max"] * initial_cost_parameters["battery_investment[yen/kWh]"] \
-                +variables["diesel_max"] * initial_cost_parameters["diesel_investment[yen/kWh]"]
+    #initial_cost_parameters["PV_cost[yen/kWh]"]
+    #initial_cost_parameters["battery_cost[yen/kWh]"]
+    #initial_cost_parameters["diesel_cost[yen/kWh]"]
+    total_cost = variables["pv_power_sum"] * initial_cost_parameters["PV_cost[yen/kWh]"] \
+                +(variables["battery_charging_power_sum"] + variables["battery_discharging_power_sum"] ) \
+                * initial_cost_parameters["battery_cost[yen/kWh]"] \
+                +variables["diesel_power_sum"] * initial_cost_parameters["diesel_cost[yen/kWh]"]
 
     return total_cost
 
@@ -108,8 +117,10 @@ def loop_flowchart(PSO):
                  "diesel_max": PSO.diesel_max,
                  "demand_sum": PSO.df['demand'].sum(),
                  "pv_power_sum": PSO.df['pv'].sum(),
-                 "diesel_power_sum ": PSO.df['diesel power'].sum(),
-                 "trashed_power_sum ": PSO.df['trashed power'].sum(),
+                 "battery_charging_power_sum":PSO.df['battery_charging_power'].sum(),
+                 "battery_discharging_power_sum":PSO.df['battery_discharging_power'].sum(),
+                 "diesel_power_sum": PSO.df['diesel power'].sum(),
+                 "trashed_power_sum": PSO.df['trashed power'].sum()
                     }
 
     PSO.total_cost= calc_cost(PSO.variables, PSO.initial_cost_parameters)
