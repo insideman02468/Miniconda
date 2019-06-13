@@ -6,5 +6,5 @@ git remote add origin https://github.com/insideman02468/Miniconda.git
 git status
 git checkout master
 git add --all
-git commit -m "Add LCOE calc of diesel!"
+git commit -m "Modified cost calc and LCOE = 42[yen/kWh]"
 git push origin master

@@ -24,18 +24,19 @@ def intialize__PSO_particles(n_particles):
     """
     ランダムな整数のバクトルを作成
     """
-    particle_position_vector = \
-    np.array([np.array([random.random()*100, random.random()*100,random.random()*100, random.random()*100]) \
-              for _ in range(n_particles)])
-    pbest_position = particle_position_vector
-
-    pbest_fitness_value = np.array([float('inf') for _ in range(n_particles)])
-    gbest_fitness_value = float('inf')
-    gbest_position = pbest_position
-
     velocity_vector = ([np.array([0, 0,0, 0]) for _ in range(n_particles)])
     previous_velocity_vector = ([np.array([0,0, 0, 0]) for _ in range(n_particles)])
     iteration = 0
+    pbest_fitness_value = np.array([float('inf') for _ in range(n_particles)])
+    
+    gbest_fitness_value = float('inf')
+    range_vector = [3000,10,50,10]
+    particle_position_vector = \
+    np.array([np.array([random.random()*range_vector[0], random.random()*range_vector[1],\
+                        random.random()*range_vector[2],random.random()*range_vector[3]]) \
+              for _ in range(n_particles)])
+    pbest_position = particle_position_vector
+    gbest_position = pbest_position
 
     particle = {  "particle_position_vector": particle_position_vector,
                   "pbest_position": pbest_position,
@@ -45,8 +46,8 @@ def intialize__PSO_particles(n_particles):
                   "velocity_vector": velocity_vector,
                   "previous_velocity_vector": previous_velocity_vector,
                   "iteration": iteration,
+                  "range_vector":range_vector
                     }
-
     return particle
 
 def constrained(position):
@@ -54,7 +55,7 @@ def constrained(position):
     y=position[1]
     z=position[2]
     v=position[3]
-    if 100> x > 0 and 100>y>0 and 100 > z > 0 and 100>v>0:
+    if 5000> x > 0 and 20>y>0 and 50 > z > 0 and 30>v>4:
         judge=True
     else:
         judge=False
@@ -100,14 +101,19 @@ def iterations_PSO(PSO):
 
             #毎回、容量が変わるのでバッテリーのリミットを更新
             PSO.set_battery_limit()
-
+            
+            #total_checkのリセット
+            total_check = True
+            
             #フローチャートをループで回して計算結果を取得
-            df, total_check, variables, total_cost ,success_loops, failed_loops = loop_flowchart(PSO)
+            df, total_check, variables, total_cost,PSO.SCL,PSO.SEL ,success_loops, failed_loops = loop_flowchart(PSO)
 
             #フローチャートもしくは、制約条件にエラーがある場合、粒子の位置をランダムにリセット
             while total_check == False or constrained(particle_position_vector[i]) == False:
+                print(particle_position_vector[i])
                 print('particle_position_vector is errored')
-                particle_position_vector[i] = [random.random()*100, random.random()*100,random.random()*100, random.random()*100]
+                particle_position_vector[i] = [random.random()*PSO.particle["range_vector"][0], random.random()*PSO.particle["range_vector"][1],\
+                                               random.random()*PSO.particle["range_vector"][2], random.random()*PSO.particle["range_vector"][3]]
 
                 #粒子を設備容量に格納する。
                 PSO.update_fitness_variable_parameters(\
@@ -118,9 +124,12 @@ def iterations_PSO(PSO):
 
                 #毎回、容量が変わるのでバッテリーのリミットを更新
                 PSO.set_battery_limit()
-
+                
+                #Total_checkのリセット
+                total_check=True
+                
                 #フローチャートをループで回して計算結果を取得
-                df, total_check, variables, total_cost ,success_loops, failed_loops = loop_flowchart(PSO)
+                df, total_check, variables, total_cost,PSO.SCL,PSO.SEL ,success_loops, failed_loops = loop_flowchart(PSO)
 
             #フローチャートがエラーなく動く場合、PSOに進む。
             #かつ、制約条件をクリアしている時
@@ -139,7 +148,9 @@ def iterations_PSO(PSO):
                                 'particle_number': i,\
                                 'gbest_position': gbest_position,\
                                 'gbest_fitness_value': gbest_fitness_value,\
-                                'table': df
+                                'table': df,\
+                                "SCL": PSO.SCL,\
+                                "SEL": PSO.SEL
                                 }
 
         for i in range(n_particles):

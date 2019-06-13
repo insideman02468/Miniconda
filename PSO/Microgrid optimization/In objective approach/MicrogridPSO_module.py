@@ -44,7 +44,8 @@ class MicrogridPSO_initialize:
                                         "Diesel_Bdg":0.081451,
                                        "It_Battery_1kW[yen/year]": [13540,0,0,0,13540,0,0,0,13540,0,0,0,13540,0,0,0,13540,0,0,0],
                                        "Mt_Battery_1kW[yen/year]":[1100] * 20,
-                                       "Ft_Battery_1kW[yen/year]":[0]*20,
+                                       "Ft_Battery_1kW[yen/year]": [0]* 20,
+                                       "Sell_income_from_trashed[kWh/yen]":[20]*20,
                                        "r[yen/year]":[0.0234375]*20,
                                        "operation_year":list(range(1,21))
                                         }
@@ -82,9 +83,9 @@ class MicrogridPSO_initialize:
         self.SOC_min = initial_input_values["SOC_min[%]"]
         self.pv_capacity_per_unit = initial_input_values["pv_capacity_per_unit"]
         self.wind_capacity_per_unit = initial_input_values["wind_capacity_per_unit"]
-        self.np_demand = self.number_demand *             self.Target_input['Demand[kWh]'].values
-        self.np_PV_efficient = self.Target_input['Forecast_PV[Wh/unit]'].values/1000
-        self.np_Wind_efficient = self.Target_input['Forecast_Wind[kWh/unit]'].values
+        self.np_demand = self.number_demand * self.Target_input['Demand[kWh]'].values
+        self.np_PV_efficient = self.Target_input['PV[Wh/unit]'].values/1000
+        self.np_Wind_efficient = self.Target_input['Wind[kWh/unit]'].values
 
     # update fitness_variable_parameters
     def update_fitness_variable_parameters(self, fitness_variable_parameters):
@@ -101,8 +102,8 @@ class MicrogridPSO_initialize:
 
     # batery limitation calc
     def set_battery_limit(self):
-        self.battery_max = self.initial_input_values["SOC_max[%]"] *             self.battery_cap_max
-        self.battery_min = self.initial_input_values["SOC_min[%]"] *             self.battery_cap_max
+        self.battery_max = self.initial_input_values["SOC_max[%]"] * self.battery_cap_max
+        self.battery_min = self.initial_input_values["SOC_min[%]"] * self.battery_cap_max
         self.p_battery=self.initial_input_values["SOC_start[%]"]*self.battery_max
 
 
