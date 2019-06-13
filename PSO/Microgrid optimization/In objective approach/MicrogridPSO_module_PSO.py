@@ -25,7 +25,7 @@ def intialize__PSO_particles(n_particles):
     ランダムな整数のバクトルを作成
     """
     particle_position_vector = \
-    np.array([np.array([random.random()*500000, random.random()*100, random.random()*100]) \
+    np.array([np.array([random.random()*100, random.random()*100,random.random()*100, random.random()*100]) \
               for _ in range(n_particles)])
     pbest_position = particle_position_vector
 
@@ -33,8 +33,8 @@ def intialize__PSO_particles(n_particles):
     gbest_fitness_value = float('inf')
     gbest_position = pbest_position
 
-    velocity_vector = ([np.array([0, 0, 0]) for _ in range(n_particles)])
-    previous_velocity_vector = ([np.array([0, 0, 0]) for _ in range(n_particles)])
+    velocity_vector = ([np.array([0, 0,0, 0]) for _ in range(n_particles)])
+    previous_velocity_vector = ([np.array([0,0, 0, 0]) for _ in range(n_particles)])
     iteration = 0
 
     particle = {  "particle_position_vector": particle_position_vector,
@@ -53,7 +53,8 @@ def constrained(position):
     x=position[0]
     y=position[1]
     z=position[2]
-    if 500000> x > 0 and 100>y>0 and 100 > z > 0:
+    v=position[3]
+    if 100> x > 0 and 100>y>0 and 100 > z > 0 and 100>v>0:
         judge=True
     else:
         judge=False
@@ -93,8 +94,9 @@ def iterations_PSO(PSO):
             #粒子を設備容量に格納する。
             PSO.update_fitness_variable_parameters(\
                 {'pv_cap_max': particle_position_vector[i][0], \
-                'battery_cap_max': particle_position_vector[i][1], \
-                'diesel_max': particle_position_vector[i][2]})
+                'wind_cap_max': particle_position_vector[i][1], \
+                'battery_cap_max': particle_position_vector[i][2], \
+                'diesel_max': particle_position_vector[i][3]})
 
             #毎回、容量が変わるのでバッテリーのリミットを更新
             PSO.set_battery_limit()
@@ -105,13 +107,14 @@ def iterations_PSO(PSO):
             #フローチャートもしくは、制約条件にエラーがある場合、粒子の位置をランダムにリセット
             while total_check == False or constrained(particle_position_vector[i]) == False:
                 print('particle_position_vector is errored')
-                particle_position_vector[i] = [random.random()*500000, random.random()*100, random.random()*100]
+                particle_position_vector[i] = [random.random()*100, random.random()*100,random.random()*100, random.random()*100]
 
                 #粒子を設備容量に格納する。
                 PSO.update_fitness_variable_parameters(\
                     {'pv_cap_max': particle_position_vector[i][0], \
-                    'battery_cap_max': particle_position_vector[i][1], \
-                    'diesel_max': particle_position_vector[i][2]})
+                     'wind_cap_max': particle_position_vector[i][1], \
+                    'battery_cap_max': particle_position_vector[i][2], \
+                    'diesel_max': particle_position_vector[i][3]})
 
                 #毎回、容量が変わるのでバッテリーのリミットを更新
                 PSO.set_battery_limit()
@@ -157,3 +160,5 @@ def iterations_PSO(PSO):
     print("The best position is ", gbest_position,\
         " and gbest_fitness_value is", gbest_fitness_value, \
         " in iteration number ", iteration, "and ", n_particles, "particles.")
+
+    return PSO

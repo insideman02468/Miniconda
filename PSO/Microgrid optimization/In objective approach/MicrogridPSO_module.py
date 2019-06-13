@@ -30,15 +30,17 @@ class MicrogridPSO_initialize:
         self.Target_input_len = len(self.Target_input)
 
         # initial_cost_parameters
-        self.initial_cost_parameters = {"PV_cost[yen/kWh]": 0,
-                                        "battery_cost[yen/kWh]": 0,
-                                        "diesel_cost[yen/kWh]": 0,
+        self.initial_cost_parameters = {"PV_investment[yen/kWh]": 0,
+                                        "Wind_investment[yen/kWh]":0,
+                                        "battery_investment[yen/kWh]": 0,
+                                        "diesel_investment[yen/kWh]": 0
                                         }
 
         # initial_input_values
         self.h = 0
         self.initial_input_values = {"number_demand": 0,
                                      "pv_capacity_per_unit": 0,
+                                     "wind_capacity_per_unit": 0,
                                      "SOC_max[%]": 1,
                                      "SOC_min[%]": 0,
                                      "SOC_start[%]":0.5
@@ -46,9 +48,11 @@ class MicrogridPSO_initialize:
 
         # initial fitness variable parameters
         self.pv_cap_max = 0  # W
+        self.wind_cap_max = 0  # kWh
         self.battery_cap_max = 0  # kWh
         self.diesel_max = 0  # kWh
         self.fitness_variable_parameters = {"pv_cap_max": self.pv_cap_max,
+                                            "wind_cap_max": self.wind_cap_max,
                                             "battery_cap_max": self.battery_cap_max,
                                             "diesel_max": self.diesel_max
                                             }
@@ -64,16 +68,20 @@ class MicrogridPSO_initialize:
         self.SOC_max = initial_input_values["SOC_max[%]"]
         self.SOC_min = initial_input_values["SOC_min[%]"]
         self.pv_capacity_per_unit = initial_input_values["pv_capacity_per_unit"]
-        self.np_demand = self.number_demand * self.Target_input['Demand[kWh]'].values
+        self.wind_capacity_per_unit = initial_input_values["wind_capacity_per_unit"]
+        self.np_demand = self.number_demand *             self.Target_input['Demand[kWh]'].values
         self.np_PV_efficient = self.Target_input['Forecast_PV[Wh/unit]'].values/1000
+        self.np_Wind_efficient = self.Target_input['Forecast_Wind[kWh/unit]'].values
 
     # update fitness_variable_parameters
     def update_fitness_variable_parameters(self, fitness_variable_parameters):
         self.pv_cap_max = fitness_variable_parameters['pv_cap_max']
+        self.wind_cap_max = fitness_variable_parameters['wind_cap_max']
         self.battery_cap_max = fitness_variable_parameters['battery_cap_max']
         self.diesel_max = fitness_variable_parameters['diesel_max']
 
         self.fitness_variable_parameters = {"pv_cap_max": self.pv_cap_max,
+                                            "wind_cap_max": self.wind_cap_max,
                                             "battery_cap_max": self.battery_cap_max,
                                             "diesel_max": self.diesel_max
                                             }
@@ -107,9 +115,9 @@ print(dir(MicrogridPSO_initialize))
 ###Class check
 PSO = MicrogridPSO_initialize("Target_input.csv")
 
-PSO.set_initial_cost_parameters({'PV_cost[yen/kWh]': 20,
- 'battery_cost[yen/kWh]': 50,
- 'diesel_cost[yen/kWh]': 70})
+PSO.set_initial_cost_parameters({'PV_investment[yen/kWh]': 20,
+ 'battery_investment[yen/kWh]': 50,
+ 'diesel_investment[yen/kWh]': 70})
 
 PSO.set_initial_input_values({ "number_demand": 1,
                                       "pv_capacity_per_unit": 245,
@@ -129,3 +137,4 @@ PSO.update_fitness_variable_parameters({'pv_cap_max': 245, 'battery_cap_max': 1,
 
 #.ipynb convert to .py
 subprocess.run(['jupyter','nbconvert', '--to','python','MicrogridPSO_module.ipynb'])
+

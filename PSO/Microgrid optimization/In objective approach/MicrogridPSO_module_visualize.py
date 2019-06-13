@@ -92,12 +92,12 @@ class PSO_plot:
         plt.tight_layout()
 
 
-    def easyplot(self,x,y):
-        # プロット
-        plt.plot(x, y, label="test")
+def easyplot(self,x,y):
+    # プロット
+    plt.plot(x, y, label="test")
 
-        # 凡例の表示
-        plt.legend()
+    # 凡例の表示
+    plt.legend()
 
-        # プロット表示(設定の反映)
-        plt.show()
+    # プロット表示(設定の反映)
+    plt.show()
