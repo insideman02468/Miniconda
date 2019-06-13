@@ -30,10 +30,23 @@ class MicrogridPSO_initialize:
         self.Target_input_len = len(self.Target_input)
 
         # initial_cost_parameters
-        self.initial_cost_parameters = {"PV_investment[yen/kWh]": 0,
-                                        "Wind_investment[yen/kWh]":0,
-                                        "battery_investment[yen/kWh]": 0,
-                                        "diesel_investment[yen/kWh]": 0
+        self.initial_cost_parameters = {"It_PV_1kW[yen/year]": [726383.3333,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                                       "Mt_PV_1kW[yen/year]":[4329] * 20,
+                                       "Ft_PV_1kW[yen/year]":[0]*20,
+                                       "It_Wind_1kW[yen/year]": [302274.7826,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                                       "Mt_Wind_1kW[yen/year]":[662.785213] * 20,
+                                       "Ft_Wind_1kW[yen/year]":[0]*20,
+                                       "It_Diesel_1kW[yen/year]": [33611.11,33611.11,0,33611.11,33611.11,0,33611.11,33611.11,0,33611.11,\
+                                                                   33611.11,0,33611.11,33611.11,0,33611.11,33611.11,0,33611.11,33611.11],
+                                       "Mt_Diesel_1kW[yen/year]":[8.8] * 20,
+                                        "Diesel_Pf":129,
+                                        "Diesel_Adg":0.2461,
+                                        "Diesel_Bdg":0.081451,
+                                       "It_Battery_1kW[yen/year]": [13540,0,0,0,13540,0,0,0,13540,0,0,0,13540,0,0,0,13540,0,0,0],
+                                       "Mt_Battery_1kW[yen/year]":[1100] * 20,
+                                       "Ft_Battery_1kW[yen/year]":[0]*20,
+                                       "r[yen/year]":[0.0234375]*20,
+                                       "operation_year":list(range(1,21))
                                         }
 
         # initial_input_values

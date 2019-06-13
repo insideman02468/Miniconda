@@ -6,5 +6,5 @@ git remote add origin https://github.com/insideman02468/Miniconda.git
 git status
 git checkout master
 git add --all
-git commit -m "Add wind tirbine optimization"
+git commit -m "Add LCOE calc of diesel!"
 git push origin master

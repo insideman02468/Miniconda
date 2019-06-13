@@ -69,6 +69,9 @@ def flowchart(PSO):
                 PSO.flowchart_root= str(PSO.h)+"h: "+"discharging " + str(round(PSO.p_battery-PSO.battery_min, 3) )\
                       +"[kWh], diesel " + str( round(PSO.p_diesel, 3) ) +"[kWh]."
                 PSO.p_battery = PSO.battery_min
+                
+    PSO.Diesel_fc=PSO.initial_cost_parameters["Diesel_Adg"]*PSO.diesel_max+PSO.initial_cost_parameters["Diesel_Bdg"]*PSO.p_diesel
+    PSO.Diesel_Cf=PSO.initial_cost_parameters["Diesel_Pf"]*PSO.Diesel_fc
 
     PSO.parameters = {"hour": PSO.h,
                   "pv": PSO.pv,
@@ -82,22 +85,32 @@ def flowchart(PSO):
                   "Check":PSO.check,
                   "flowchart_root":PSO.flowchart_root,
                   "battery_charging_power":PSO.battery_charging_power,
-                  "battery_discharging_power": PSO.battery_discharging_power
+                  "battery_discharging_power": PSO.battery_discharging_power,
+                  "Diesel_Cf":PSO.Diesel_Cf
                     }
 
     return PSO.parameters, PSO.check, PSO.flowchart_root
 
 def calc_cost(variables, initial_cost_parameters):
-    #initial_cost_parameters["PV_cost[yen/kWh]"]
-    #initial_cost_parameters["battery_cost[yen/kWh]"]
-    #initial_cost_parameters["diesel_cost[yen/kWh]"]
-    total_cost = variables["pv_power_sum"] * initial_cost_parameters["PV_cost[yen/kWh]"] \
-                +variables["wind_power_sum"] * initial_cost_parameters["Wind_cost[yen/kWh]"] \
-                +(variables["battery_charging_power_sum"] + variables["battery_discharging_power_sum"] ) \
-                * initial_cost_parameters["battery_cost[yen/kWh]"] \
-                +variables["diesel_power_sum"] * initial_cost_parameters["diesel_cost[yen/kWh]"]
-
-    return total_cost
+    Et = [variables["pv_power_sum"]+variables["wind_power_sum"] +
+          variables["diesel_power_sum"]]*20
+    cost_parameters = {
+        "(1+r)^t": (1+np.array(initial_cost_parameters["r[yen/year]"]) ** initial_cost_parameters["operation_year"]).tolist(),
+    }
+    SCL = ((variables["pv_cap_max"]
+         * (np.array(initial_cost_parameters["It_PV_1kW[yen/year]"])+np.array(initial_cost_parameters["Mt_PV_1kW[yen/year]"])))\
+        + (variables["wind_cap_max"]\
+        * (np.array(initial_cost_parameters["It_Wind_1kW[yen/year]"])+np.array(initial_cost_parameters["Mt_Wind_1kW[yen/year]"]))) \
+        + (variables["diesel_max"]\
+        * (np.array(initial_cost_parameters["It_Diesel_1kW[yen/year]"])+np.array(initial_cost_parameters["Mt_Diesel_1kW[yen/year]"]) ) ) \
+        + (variables["battery_cap_max"]\
+        * (np.array(initial_cost_parameters["It_Battery_1kW[yen/year]"])+np.array(initial_cost_parameters["Mt_Battery_1kW[yen/year]"]))) \
+        +np.array(variables["Disel_Cf_sum"]*20)) \
+        /cost_parameters["(1+r)^t"]
+    
+    SEL =np.array(Et)/cost_parameters["(1+r)^t"]
+    LCOE=np.sum(SCL)/np.sum(SEL)
+    return LCOE
 
 def loop_flowchart(PSO):
     #からのデータフレームを作成
@@ -129,7 +142,8 @@ def loop_flowchart(PSO):
                  "battery_charging_power_sum":PSO.df['battery_charging_power'].sum(),
                  "battery_discharging_power_sum":PSO.df['battery_discharging_power'].sum(),
                  "diesel_power_sum": PSO.df['diesel power'].sum(),
-                 "trashed_power_sum": PSO.df['trashed power'].sum()
+                 "trashed_power_sum": PSO.df['trashed power'].sum(),
+                 "Disel_Cf_sum":PSO.df['Diesel_Cf'].sum()
                     }
 
     PSO.total_cost= calc_cost(PSO.variables, PSO.initial_cost_parameters)
