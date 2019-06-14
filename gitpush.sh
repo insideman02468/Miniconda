@@ -6,5 +6,5 @@ git remote add origin https://github.com/insideman02468/Miniconda.git
 git status
 git checkout master
 git add --all
-git commit -m "Good result of LCOE "
+git commit -m "Modified total check judge of flowchart. "
 git push origin master

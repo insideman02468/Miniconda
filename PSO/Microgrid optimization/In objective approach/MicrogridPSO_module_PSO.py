@@ -33,7 +33,7 @@ def intialize__PSO_particles(n_particles):
     range_vector = [3000,10,50,15]
     particle_position_vector = \
     np.array([np.array([random.random()*range_vector[0], random.random()*range_vector[1],\
-                        random.random()*range_vector[2],random.random()*range_vector[3]]) \
+                        random.random()*range_vector[2], random.random()*range_vector[3]]) \
               for _ in range(n_particles)])
     pbest_position = particle_position_vector
     gbest_position = pbest_position
@@ -112,9 +112,22 @@ def iterations_PSO(PSO):
             while total_check == False or constrained(particle_position_vector[i]) == False:
                 print(particle_position_vector[i])
                 print('particle_position_vector is errored')
+                
+                '''
                 particle_position_vector[i] = [random.random()*PSO.particle["range_vector"][0], random.random()*PSO.particle["range_vector"][1],\
                                                random.random()*PSO.particle["range_vector"][2], random.random()*PSO.particle["range_vector"][3]]
-
+                '''
+                
+                if iteration == 0:
+                    particle_position_vector[i] = [random.random()*PSO.particle["range_vector"][0], random.random()*PSO.particle["range_vector"][1],\
+                                                   random.random()*PSO.particle["range_vector"][2], random.random()*PSO.particle["range_vector"][3]]
+                else:
+                    new_velocity = (w*previous_velocity_vector[i]) + (c1*random.random()) * (pbest_position[i] - particle_position_vector[i]) \
+                    + (c2*random.random()) * (gbest_position-particle_position_vector[i])
+                    new_position = new_velocity + particle_position_vector[i]
+                    particle_position_vector[i] = new_position
+                    previous_velocity_vector[i]= new_velocity
+                
                 #粒子を設備容量に格納する。
                 PSO.update_fitness_variable_parameters(\
                     {'pv_cap_max': particle_position_vector[i][0], \
@@ -156,10 +169,11 @@ def iterations_PSO(PSO):
         for i in range(n_particles):
             if iteration == 0:
                 previous_velocity_vector[i] = velocity_vector[i]
-            new_velocity = (w*previous_velocity_vector[i]) + (c1*random.random()) * (pbest_position[i] - particle_position_vector[i]) + (c2*random.random()) * (gbest_position-particle_position_vector[i])
+            new_velocity = (w*previous_velocity_vector[i]) + (c1*random.random()) * (pbest_position[i] - particle_position_vector[i]) \
+            + (c2*random.random()) * (gbest_position-particle_position_vector[i])
             new_position = new_velocity + particle_position_vector[i]
             particle_position_vector[i] = new_position
-            previous_velocity_vector[i]=new_velocity
+            previous_velocity_vector[i]= new_velocity
 
         #書くイテレーションの値をリストに保存
         PSO.gbest_list.append(gbest_position)

@@ -66,7 +66,7 @@ def flowchart(PSO):
             PSO.p_diesel = PSO.np_demand[PSO.h]-PSO.pv-PSO.wind-(PSO.p_battery-PSO.battery_min)
             # ディーゼルの容量を超える場合はエラー
             if PSO.p_diesel > PSO.diesel_max:
-                PSO.check = 'False'
+                PSO.check = False
                 PSO.flowchart_root=str(PSO.h)+"h: "+"Error! diesel capacity is over!"
                 print(PSO.flowchart_root)
                 print('PSO.diesel_max | PSO.p_diesel |PSO.np_demand[PSO.h] | PSO.np_demand[PSO.h]-PSO.pv-PSO.wind |PSO.p_battery-PSO.battery_min')
@@ -125,13 +125,13 @@ def loop_flowchart(PSO):
     for PSO.h in range(len(PSO.Target_input.index)):
         PSO.flowchart_parameters, PSO.check, PSO.flowchart_root=flowchart(PSO)
         if PSO.check == False:
-            print('Do break')
             break
+            print('break')
         PSO.p_battery=PSO.flowchart_parameters['battery state[kWh]']
         PSO.df=pd.concat([PSO.df,pd.io.json.json_normalize(PSO.flowchart_parameters)])
 
     #ループ内でfalseがあるかチェック　falseがあるとtotal_checkにfalseが入る。
-    PSO.total_check = not("False" in PSO.df['Check'].values)
+    PSO.total_check = not(False in PSO.df['Check'].values)
 
     #Count itterations of flowchrt
     Success_loops, Failed_loops= 0, 0
