@@ -69,7 +69,8 @@ def flowchart(PSO):
                 PSO.check = 'False'
                 PSO.flowchart_root=str(PSO.h)+"h: "+"Error! diesel capacity is over!"
                 print(PSO.flowchart_root)
-                print(PSO.np_demand[PSO.h],PSO.np_demand[PSO.h]-PSO.pv-PSO.wind,PSO.p_diesel,PSO.diesel_max)
+                print('PSO.diesel_max | PSO.p_diesel |PSO.np_demand[PSO.h] | PSO.np_demand[PSO.h]-PSO.pv-PSO.wind |PSO.p_battery-PSO.battery_min')
+                print(PSO.diesel_max, PSO.p_diesel, PSO.np_demand[PSO.h], PSO.np_demand[PSO.h]-PSO.pv-PSO.wind, PSO.p_battery-PSO.battery_min)
             else:
                 PSO.flowchart_root= str(PSO.h)+"h: "+"discharging " + str(round(PSO.p_battery-PSO.battery_min, 3) )\
                       +"[kWh], diesel " + str( round(PSO.p_diesel, 3) ) +"[kWh]."
@@ -98,8 +99,7 @@ def flowchart(PSO):
 
 def calc_cost(variables, initial_cost_parameters):
     Et = [ variables["pv_power_sum"]+variables["wind_power_sum"] +
-          variables["diesel_power_sum"]+variables["battery_discharging_power_sum"]\
-          +variables["trashed_power_sum"] ]*20
+          variables["diesel_power_sum"]+variables["battery_discharging_power_sum"] ]*20
     cost_parameters = {
         "(1+r)^t": (1+np.array(initial_cost_parameters["r[yen/year]"]) ** initial_cost_parameters["operation_year"]).tolist(),
     }
