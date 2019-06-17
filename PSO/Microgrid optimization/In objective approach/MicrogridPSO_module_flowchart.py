@@ -38,7 +38,7 @@ def flowchart(PSO):
     if PSO.pv+PSO.wind > PSO.np_demand[PSO.h]:
         # 太陽光の発電量が需要より多い時の処理
         # バッテリーが過充電にならないかのチェック、過充電の場合、余った電気は捨てる。
-        if PSO.p_battery+(PSO.pv+PSO.wind-PSO.np_demand[PSO.h]) <= PSO.battery_max:
+        if PSO.p_battery+(PSO.pv+PSO.wind-PSO.np_demand[PSO.h]) < PSO.battery_max:
             PSO.p_battery = PSO.p_battery+(PSO.pv+PSO.wind-PSO.np_demand[PSO.h])
             PSO.battery_charging_power=PSO.battery_charging_power+PSO.pv+PSO.wind-PSO.np_demand[PSO.h]
             PSO.flowchart_root=str(PSO.h)+"h: "+"Battery charge without diesel."
@@ -68,9 +68,6 @@ def flowchart(PSO):
             if PSO.p_diesel > PSO.diesel_max:
                 PSO.check = False
                 PSO.flowchart_root=str(PSO.h)+"h: "+"Error! diesel capacity is over!"
-                print(PSO.flowchart_root)
-                print('PSO.diesel_max | PSO.p_diesel |PSO.np_demand[PSO.h] | PSO.np_demand[PSO.h]-PSO.pv-PSO.wind |PSO.p_battery-PSO.battery_min')
-                print(PSO.diesel_max, PSO.p_diesel, PSO.np_demand[PSO.h], PSO.np_demand[PSO.h]-PSO.pv-PSO.wind, PSO.p_battery-PSO.battery_min)
             else:
                 PSO.flowchart_root= str(PSO.h)+"h: "+"discharging " + str(round(PSO.p_battery-PSO.battery_min, 3) )\
                       +"[kWh], diesel " + str( round(PSO.p_diesel, 3) ) +"[kWh]."
@@ -122,11 +119,25 @@ def calc_cost(variables, initial_cost_parameters):
 def loop_flowchart(PSO):
     #からのデータフレームを作成
     PSO.df = pd.DataFrame()
+    #毎回、容量が変わるのでバッテリーのリミットを更新
+    PSO.set_battery_limit()
+    
     for PSO.h in range(len(PSO.Target_input.index)):
+        PSO.set_battery_limit()
         PSO.flowchart_parameters, PSO.check, PSO.flowchart_root=flowchart(PSO)
+        
         if PSO.check == False:
-            break
-            print('break')
+            print('      *',PSO.h, '[h]-----PSO.check is False.')
+            print('      *',PSO.flowchart_root)
+            print('      *PSO.diesel_max | PSO.p_diesel |PSO.np_demand[PSO.h] | PSO.np_demand[PSO.h]-PSO.pv-PSO.wind |PSO.p_battery-PSO.battery_min')
+            print('      *',PSO.diesel_max, PSO.p_diesel, PSO.np_demand[PSO.h], PSO.np_demand[PSO.h]-PSO.pv-PSO.wind, PSO.p_battery-PSO.battery_min)
+            Success_loops, Failed_loops = 0, 1
+            PSO.total_check = False
+            PSO.variables = "Error"
+            PSO.total_cost = "Error"
+            PSO.SCL,PSO.SEL = "Error","Error"
+            return PSO.df ,PSO.total_check, PSO.variables, PSO.total_cost,PSO.SCL,PSO.SEL, Success_loops, Failed_loops
+        
         PSO.p_battery=PSO.flowchart_parameters['battery state[kWh]']
         PSO.df=pd.concat([PSO.df,pd.io.json.json_normalize(PSO.flowchart_parameters)])
 
