@@ -32,8 +32,8 @@ def intialize__PSO_particles(n_particles):
     gbest_fitness_value = float('inf')
     range_vector = [3000,20,15,10]
     particle_position_vector = \
-    np.array([np.array([random.random()*range_vector[0], random.random()*range_vector[1],\
-                        random.random()*range_vector[2], random.random()*range_vector[3]]) \
+    np.array([np.array([np.random.rand()*range_vector[0], np.random.rand()*range_vector[1],\
+                        np.random.rand()*range_vector[2], np.random.rand()*range_vector[3]]) \
               for _ in range(n_particles)])
     pbest_position = particle_position_vector
     gbest_position = pbest_position
@@ -82,7 +82,9 @@ def iterations_PSO(PSO):
     gbest_position=PSO.particle["gbest_position"]
     velocity_vector=PSO.particle["velocity_vector"]
     previous_velocity_vector=PSO.particle["previous_velocity_vector"]
-    iteration=PSO.particle["iteration"]
+    iteration = PSO.particle["iteration"]
+    original_particle_position_vector = np.array([0,0,0,0])
+    original_previous_velocity_vector = np.array([0,0,0,0])
     constrained_iteration = 0
     PSO.gbest_list=[]
     PSO.iteration_list=[]
@@ -109,25 +111,40 @@ def iterations_PSO(PSO):
             #フローチャートをループで回して計算結果を取得
             df, total_check, variables, total_cost,PSO.SCL,PSO.SEL ,success_loops, failed_loops = loop_flowchart(PSO)
 
+            #whileループの回数をリセット
+            loop_number = 1
             #フローチャートもしくは、制約条件にエラーがある場合、粒子の位置をランダムにリセット
             while total_check == False or constrained(particle_position_vector[i]) == False:
-                print('      *particle_position_vector is errored.'+ str(particle_position_vector[i]))
+                
+                print('      *particle_position_vector is errored.loop=',loop_number, particle_position_vector[i])
                 
                 '''
-                particle_position_vector[i] = [random.random()*PSO.particle["range_vector"][0], random.random()*PSO.particle["range_vector"][1],\
-                                               random.random()*PSO.particle["range_vector"][2], random.random()*PSO.particle["range_vector"][3]]
+                particle_position_vector[i] = [np.random.rand()*PSO.particle["range_vector"][0], np.random.rand()*PSO.particle["range_vector"][1],\
+                                               np.random.rand()*PSO.particle["range_vector"][2], np.random.rand()*PSO.particle["range_vector"][3]]
                 '''
                 
                 if iteration == 0:
-                    particle_position_vector[i] = [random.random()*PSO.particle["range_vector"][0], random.random()*PSO.particle["range_vector"][1],\
-                                                   random.random()*PSO.particle["range_vector"][2], random.random()*PSO.particle["range_vector"][3]]
+                    particle_position_vector[i] = [np.random.rand()*PSO.particle["range_vector"][0], np.random.rand()*PSO.particle["range_vector"][1],\
+                                                   np.random.rand() * PSO.particle["range_vector"][2], np.random.rand() * PSO.particle["range_vector"][3]]
+                    loop_number +=1
                 else:
-                    new_velocity = (w*previous_velocity_vector[i]) + (c1*random.random()) * (pbest_position[i] - particle_position_vector[i]) \
-                    + (c2*random.random()) * (gbest_position-particle_position_vector[i])
-                    new_position = new_velocity + particle_position_vector[i]
-                    particle_position_vector = new_position
+                    if loop_number == 1:
+                        original_particle_position_vector = particle_position_vector[i]
+                        original_previous_velocity_vector = previous_velocity_vector[i]
+                        print('      *original_particle_position_vector',original_particle_position_vector)
+                        print('      *original_previous_velocity_vector',original_previous_velocity_vector)
+                    new_velocity = (w*original_previous_velocity_vector) + (c1*np.random.rand()) * (pbest_position[i] - original_particle_position_vector) \
+                    + (c2*np.random.rand()) * (gbest_position-original_particle_position_vector)
+                    particle_position_vector[i] = new_velocity + original_particle_position_vector
+                    #ループが３回以上続く場合、ポジションをリセット
+                    if loop_number >= 3:
+                        particle_position_vector[i] = [np.random.rand()*PSO.particle["range_vector"][0], np.random.rand()*PSO.particle["range_vector"][1],\
+                                                   np.random.rand() * PSO.particle["range_vector"][2], np.random.rand() * PSO.particle["range_vector"][3]]
+                    print('      *loop=',loop_number, 'new_velocity:',new_velocity,'original_particle_position_vector', original_particle_position_vector)
+                    loop_number += 1
+
                 
-                print('      *particle_position_vector is updated by error.'+ str(particle_position_vector[i]))
+                print('      *particle_position_vector is updated by error.',particle_position_vector[i])
 
                 #粒子を設備容量に格納する。
                 PSO.update_fitness_variable_parameters(\
@@ -164,11 +181,13 @@ def iterations_PSO(PSO):
                                 "SEL": PSO.SEL
                                 }
 
-            new_velocity = (w*previous_velocity_vector[i]) + (c1*random.random()) * (pbest_position[i] - particle_position_vector[i]) \
-            + (c2*random.random()) * (gbest_position-particle_position_vector[i])
+            if iteration != 0:
+                previous_velocity_vector[i]= new_velocity
+            new_velocity = (w*previous_velocity_vector[i]) + (c1*np.random.rand()) * (pbest_position[i] - particle_position_vector[i]) \
+            + (c2*np.random.rand()) * (gbest_position-particle_position_vector[i])
             new_position = new_velocity + particle_position_vector[i]
             particle_position_vector[i] = new_position
-            print('previous_velocity_vector[',i,']',previous_velocity_vector[i],'new_velocity',new_velocity)
+            print('      *previous_velocity_vector[',i,']',previous_velocity_vector[i],'new_velocity',new_velocity)
             previous_velocity_vector[i]= new_velocity
             print('      *particle_position_vector[',str(i),'] is updated. particle_position:', str(particle_position_vector[i]))
 

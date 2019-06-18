@@ -104,7 +104,7 @@ class MicrogridPSO_initialize:
     def set_battery_limit(self):
         self.battery_max = self.initial_input_values["SOC_max[%]"] * self.battery_cap_max
         self.battery_min = self.initial_input_values["SOC_min[%]"] * self.battery_cap_max
-        self.p_battery=self.initial_input_values["SOC_start[%]"]*self.battery_max
+        self.p_battery=self.initial_input_values["SOC_start[%]"]*self.battery_cap_max
 
 
 # In[3]:

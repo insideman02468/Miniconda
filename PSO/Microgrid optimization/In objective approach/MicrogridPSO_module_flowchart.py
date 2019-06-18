@@ -33,7 +33,8 @@ def flowchart(PSO):
     PSO.trashed_power = 0
     PSO.battery_charging_power = 0
     PSO.battery_discharging_power = 0
-    PSO.flowchart_root= str(PSO.h)+"h"
+    PSO.flowchart_root = str(PSO.h) + "h"
+
     # 太陽光の発電量が需要より多いか確認
     if PSO.pv+PSO.wind > PSO.np_demand[PSO.h]:
         # 太陽光の発電量が需要より多い時の処理
@@ -123,7 +124,6 @@ def loop_flowchart(PSO):
     PSO.set_battery_limit()
     
     for PSO.h in range(len(PSO.Target_input.index)):
-        PSO.set_battery_limit()
         PSO.flowchart_parameters, PSO.check, PSO.flowchart_root=flowchart(PSO)
         
         if PSO.check == False:
