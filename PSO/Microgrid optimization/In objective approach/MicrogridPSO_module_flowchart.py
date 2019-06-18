@@ -26,9 +26,12 @@ def flowchart(PSO):
 
     # initialize some parameters
     if PSO.h == 0:
-        PSO.p_battery = PSO.battery_cap_max * PSO.initial_input_values["SOC_start[%]"]
-        PSO.battery_max = PSO.battery_cap_max * PSO.initial_input_values["SOC_max[%]"]
-        PSO.battery_min = PSO.battery_cap_max * PSO.initial_input_values["SOC_min[%]"]
+        PSO.p_battery = PSO.battery_cap_max * \
+            PSO.initial_input_values["SOC_start[%]"]
+        PSO.battery_max = PSO.battery_cap_max * \
+            PSO.initial_input_values["SOC_max[%]"]
+        PSO.battery_min = PSO.battery_cap_max * \
+            PSO.initial_input_values["SOC_min[%]"]
     PSO.pv = pv_generate(PSO)
     PSO.wind = wind_generate(PSO)
     PSO.check = "True"
@@ -42,8 +45,7 @@ def flowchart(PSO):
     if PSO.pv + PSO.wind > PSO.np_demand[PSO.h]:
         # 太陽光の発電量が需要より多い時の処理
         # バッテリーが過充電にならないかのチェック、過充電の場合、余った電気は捨てる。
-        if PSO.p_battery + (PSO.pv + PSO.wind -
-                            PSO.np_demand[PSO.h]) < PSO.battery_max:
+        if PSO.p_battery + (PSO.pv + PSO.wind - PSO.np_demand[PSO.h]) < PSO.battery_max:
             PSO.p_battery = PSO.p_battery + \
                 (PSO.pv + PSO.wind - PSO.np_demand[PSO.h])
             PSO.battery_charging_power = PSO.battery_charging_power + \
@@ -124,12 +126,10 @@ def calc_cost(variables, initial_cost_parameters):
     Et = [variables["pv_power_sum"] + variables["wind_power_sum"] + variables["diesel_power_sum"] + variables["battery_discharging_power_sum"]] * 20
     cost_parameters = {
         "(1+r)^t": (
-            1 +
-            np.array(
+            1 + np.array(
                 initial_cost_parameters["r[yen/year]"]) ** initial_cost_parameters["operation_year"]).tolist(),
     }
-    SCL = (((variables["pv_cap_max"] / 1000)
-            * (np.array(initial_cost_parameters["It_PV_1kW[yen/year]"]) + np.array(initial_cost_parameters["Mt_PV_1kW[yen/year]"])))
+    SCL = (((variables["pv_cap_max"] / 1000) * (np.array(initial_cost_parameters["It_PV_1kW[yen/year]"]) + np.array(initial_cost_parameters["Mt_PV_1kW[yen/year]"])))
            + (variables["wind_cap_max"]
               * (np.array(initial_cost_parameters["It_Wind_1kW[yen/year]"]) + np.array(initial_cost_parameters["Mt_Wind_1kW[yen/year]"])))
            + (variables["diesel_max"]
@@ -141,8 +141,8 @@ def calc_cost(variables, initial_cost_parameters):
         / cost_parameters["(1+r)^t"]
 
     SEL = np.array(Et) / cost_parameters["(1+r)^t"]
-    LCOE = np.sum(SCL) / np.sum(SEL)
-    return LCOE, SCL, SEL
+    COST = np.sum(SCL)
+    return COST, SCL, SEL
 
 
 def loop_flowchart(PSO):
