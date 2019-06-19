@@ -212,6 +212,7 @@ def iterations_PSO(PSO):
                                 'global_best_position': global_best_position,
                                 'global_best_fitness_value': global_best_fitness_value,
                                 'table': df,
+                                "variables": variables,
                                 "SCL": PSO.SCL,
                                 "SEL": PSO.SEL
                                 }
