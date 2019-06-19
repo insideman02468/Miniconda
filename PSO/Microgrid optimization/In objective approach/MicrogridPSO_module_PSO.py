@@ -4,7 +4,7 @@ from MicrogridPSO_module_flowchart import loop_flowchart
 # Initialize particles & to input parameters
 
 
-def intialize_PSO_parameters():
+def initialize_PSO_parameters():
     # input initialize parametes
     n_iterations = int(input("Inform the number of iterations: "))
     n_particles = int(input("Inform the number of particles: "))
@@ -16,7 +16,7 @@ def intialize_PSO_parameters():
 # 粒子の数を引数にして初期の粒子を作成する。「3次元」
 
 
-def intialize__PSO_particles(n_particles):
+def initialize__PSO_particles(n_particles):
     """
     ランダムな整数のバクトルを作成
     """
@@ -24,22 +24,22 @@ def intialize__PSO_particles(n_particles):
     previous_velocity_vector = ([np.array([0, 0, 0, 0])
                                  for _ in range(n_particles)])
     iteration = 0
-    pbest_fitness_value = np.array([float('inf') for _ in range(n_particles)])
+    personal_best_fitness_value = np.array([float('inf') for _ in range(n_particles)])
 
-    gbest_fitness_value = float('inf')
-    range_vector = [3000, 12, 25, 15]
+    global_best_fitness_value = float('inf')
+    range_vector = [3000, 12, 25, 13]
     particle_position_vector = \
         np.array([np.array([np.random.rand() * range_vector[0], np.random.rand() * range_vector[1],
                             np.random.rand() * range_vector[2], np.random.rand() * range_vector[3]])
                   for _ in range(n_particles)])
-    pbest_position = particle_position_vector
-    gbest_position = pbest_position
+    personal_best_position = particle_position_vector
+    global_best_position = personal_best_position
 
     particle = {"particle_position_vector": particle_position_vector,
-                "pbest_position": pbest_position,
-                "pbest_fitness_value": pbest_fitness_value,
-                "gbest_fitness_value": gbest_fitness_value,
-                "gbest_position": gbest_position,
+                "personal_best_position": personal_best_position,
+                "personal_best_fitness_value": personal_best_fitness_value,
+                "global_best_fitness_value": global_best_fitness_value,
+                "global_best_position": global_best_position,
                 "velocity_vector": velocity_vector,
                 "previous_velocity_vector": previous_velocity_vector,
                 "iteration": iteration,
@@ -48,12 +48,13 @@ def intialize__PSO_particles(n_particles):
     return particle
 
 
+# 制約条件関数
 def constrained(position):
     x = position[0]
     y = position[1]
     z = position[2]
     v = position[3]
-    if 5000 > x > 0 and 15 > y > 0 and 50 > z > 0 and 20 > v > 0:
+    if 7000 > x > 0 and 15 > y > 0 and 40 > z > 0 and 15 > v > 0:
         judge = True
     else:
         judge = False
@@ -63,8 +64,8 @@ def constrained(position):
 # Find optimized cost configurations.
 def iterations_PSO(PSO):
     # initialized particle
-    n_iterations, n_particles, w, c1, c2 = intialize_PSO_parameters()
-    PSO.particle = intialize__PSO_particles(n_particles)
+    n_iterations, n_particles, w, c1, c2 = initialize_PSO_parameters()
+    PSO.particle = initialize__PSO_particles(n_particles)
 
     print(
         PSO.fitness_variable_parameters,
@@ -84,15 +85,15 @@ def iterations_PSO(PSO):
 # PSO calc
 
     particle_position_vector = PSO.particle["particle_position_vector"]
-    pbest_position = PSO.particle["pbest_position"]
-    pbest_fitness_value = PSO.particle["pbest_fitness_value"]
-    gbest_fitness_value = PSO.particle["gbest_fitness_value"]
-    gbest_position = PSO.particle["gbest_position"]
+    personal_best_position = PSO.particle["personal_best_position"]
+    personal_best_fitness_value = PSO.particle["personal_best_fitness_value"]
+    global_best_fitness_value = PSO.particle["global_best_fitness_value"]
+    global_best_position = PSO.particle["global_best_position"]
     previous_velocity_vector = PSO.particle["previous_velocity_vector"]
     iteration = PSO.particle["iteration"]
     original_particle_position_vector = np.array([0, 0, 0, 0])
     original_previous_velocity_vector = np.array([0, 0, 0, 0])
-    PSO.gbest_list = []
+    PSO.global_best_list = []
     PSO.iteration_list = []
     PSO.best_cost_list = []
 
@@ -120,7 +121,7 @@ def iterations_PSO(PSO):
             while total_check is False or constrained(
                     particle_position_vector[i]) is False:
 
-                print('      *particle_position_vector is errored.loop=',
+                print('      *particle_position_vector is error.loop=',
                       loop_number, particle_position_vector[i])
 
                 '''
@@ -148,9 +149,9 @@ def iterations_PSO(PSO):
                     new_velocity = (
                         w * original_previous_velocity_vector) + (
                         c1 * np.random.rand()) * (
-                        pbest_position[i] - original_particle_position_vector) + (
+                        personal_best_position[i] - original_particle_position_vector) + (
                         c2 * np.random.rand()) * (
-                        gbest_position - original_particle_position_vector)
+                        global_best_position - original_particle_position_vector)
                     particle_position_vector[i] = new_velocity + \
                         original_particle_position_vector
                     # ループが３回以上続く場合、ポジションをリセット
@@ -199,17 +200,17 @@ def iterations_PSO(PSO):
                     '[yen]. ',
                     particle_position_vector[i])
 
-                if(pbest_fitness_value[i] > fitness_cadidate):
-                    pbest_fitness_value[i] = fitness_cadidate
-                    pbest_position[i] = particle_position_vector[i]
+                if(personal_best_fitness_value[i] > fitness_cadidate):
+                    personal_best_fitness_value[i] = fitness_cadidate
+                    personal_best_position[i] = particle_position_vector[i]
 
-                if(gbest_fitness_value > fitness_cadidate):
-                    gbest_fitness_value = fitness_cadidate
-                    gbest_position = particle_position_vector[i]
+                if(global_best_fitness_value > fitness_cadidate):
+                    global_best_fitness_value = fitness_cadidate
+                    global_best_position = particle_position_vector[i]
                     PSO.best = {'iterations': iteration,
                                 'particle_number': i,
-                                'gbest_position': gbest_position,
-                                'gbest_fitness_value': gbest_fitness_value,
+                                'global_best_position': global_best_position,
+                                'global_best_fitness_value': global_best_fitness_value,
                                 'table': df,
                                 "SCL": PSO.SCL,
                                 "SEL": PSO.SEL
@@ -218,7 +219,7 @@ def iterations_PSO(PSO):
             if iteration != 0:
                 previous_velocity_vector[i] = new_velocity
             new_velocity = (w * previous_velocity_vector[i]) + (c1 * np.random.rand()) * (
-                pbest_position[i] - particle_position_vector[i]) + (c2 * np.random.rand()) * (gbest_position - particle_position_vector[i])
+                personal_best_position[i] - particle_position_vector[i]) + (c2 * np.random.rand()) * (global_best_position - particle_position_vector[i])
             new_position = new_velocity + particle_position_vector[i]
             particle_position_vector[i] = new_position
             print(
@@ -235,17 +236,17 @@ def iterations_PSO(PSO):
                   str(particle_position_vector[i]))
 
         # 書くイテレーションの値をリストに保存
-        PSO.gbest_list.append(gbest_position)
+        PSO.global_best_list.append(global_best_position)
         PSO.iteration_list.append(iteration)
-        PSO.best_cost_list.append(gbest_fitness_value)
+        PSO.best_cost_list.append(global_best_fitness_value)
 
         iteration = iteration + 1
 
     print(
         "The best position is ",
-        gbest_position,
-        " and gbest_fitness_value is",
-        gbest_fitness_value,
+        global_best_position,
+        " and global_best_fitness_value is",
+        global_best_fitness_value,
         " in iteration number ",
         iteration,
         "and ",

@@ -46,7 +46,7 @@ df.to_csv('PSO_result_no_income.csv', encoding="SHIFT-JIS")
 
 # 計算結果テキストファイルの作成
 f = open('PSO_result_parameters.txt', 'w')  # 書き込みモードで開く
-f_content = 'LCOE=' + str(np.sum(PSO.best['SCL']) / np.sum(PSO.best['SEL'])) + ' gbest_position: ' + str(PSO.best['gbest_position']) + ' gbest_fitness_value: ' + str(
-    PSO.best['gbest_fitness_value']) + str(PSO.variables) + str(PSO.initial_cost_parameters) + str(PSO.initial_cost_parameters)
+f_content = 'LCOE=' + str(np.sum(PSO.best['SCL']) / np.sum(PSO.best['SEL'])) + ' global_best_position: ' + str(PSO.best['global_best_position']) + ' global_best_fitness_value: ' + str(
+    PSO.best['global_best_fitness_value']) + str(PSO.variables) + str(PSO.initial_cost_parameters) + str(PSO.initial_cost_parameters)
 f.write(f_content)  # 引数の文字列をファイルに書き込む
 f.close()  # ファイルを閉じる

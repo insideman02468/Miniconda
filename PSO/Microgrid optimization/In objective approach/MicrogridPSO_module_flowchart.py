@@ -136,7 +136,7 @@ def calc_cost(variables, initial_cost_parameters):
               * (np.array(initial_cost_parameters["It_Diesel_1kW[yen/year]"]) + np.array(initial_cost_parameters["Mt_Diesel_1kW[yen/year]"])))
            + (variables["battery_cap_max"]
               * (np.array(initial_cost_parameters["It_Battery_1kW[yen/year]"]) + np.array(initial_cost_parameters["Mt_Battery_1kW[yen/year]"])))
-           + np.array(variables["Disel_Cf_sum"] * 20)
+           + np.array(variables["Diesel_Cf_sum"] * 20)
            - np.array(variables["trashed_power_sum"] * 20) * np.array(initial_cost_parameters["Sell_income_from_trashed[kWh/yen]"])) \
         / cost_parameters["(1+r)^t"]
 
@@ -178,7 +178,7 @@ def loop_flowchart(PSO):
     # ループ内でfalseがあるかチェック　falseがあるとtotal_checkにfalseが入る。
     PSO.total_check = not(False in PSO.df['Check'].values)
 
-    # Count itterations of flowchrt
+    # Count iterations of florchart
     Success_loops, Failed_loops = 0, 0
     if PSO.total_check:
         Success_loops = 1
@@ -199,7 +199,7 @@ def loop_flowchart(PSO):
         "battery_discharging_power_sum": PSO.df['battery_discharging_power'].sum(),
         "diesel_power_sum": PSO.df['diesel power'].sum(),
         "trashed_power_sum": PSO.df['trashed power'].sum(),
-        "Disel_Cf_sum": PSO.df['Diesel_Cf'].sum()}
+        "Diesel_Cf_sum": PSO.df['Diesel_Cf'].sum()}
 
     PSO.total_cost, PSO.SCL, PSO.SEL = calc_cost(
         PSO.variables, PSO.initial_cost_parameters)
