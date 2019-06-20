@@ -24,7 +24,7 @@ def wind_generate(PSO):
 
 def flowchart(PSO):
 
-    # initialize some parameters
+    # * initialize some parameters
     if PSO.h == 0:
         PSO.p_battery = PSO.battery_cap_max * \
             PSO.initial_input_values["SOC_start[%]"]
@@ -41,11 +41,12 @@ def flowchart(PSO):
     PSO.battery_discharging_power = 0
     PSO.flowchart_root = str(PSO.h) + "h"
 
-    # 太陽光の発電量が需要より多いか確認
+    # * 太陽光の発電量が需要より多いか確認
     if PSO.pv + PSO.wind > PSO.np_demand[PSO.h]:
-        # 太陽光の発電量が需要より多い時の処理
-        # バッテリーが過充電にならないかのチェック、過充電の場合、余った電気は捨てる。
-        if PSO.p_battery + (PSO.pv + PSO.wind - PSO.np_demand[PSO.h]) < PSO.battery_max:
+        # * 太陽光の発電量が需要より多い時の処理
+        # * バッテリーが過充電にならないかのチェック、過充電の場合、余った電気は捨てる。
+        if PSO.p_battery + (PSO.pv + PSO.wind -
+                            PSO.np_demand[PSO.h]) < PSO.battery_max:
             PSO.p_battery = PSO.p_battery + \
                 (PSO.pv + PSO.wind - PSO.np_demand[PSO.h])
             PSO.battery_charging_power = PSO.battery_charging_power + \
@@ -65,11 +66,8 @@ def flowchart(PSO):
                     PSO.trashed_power,
                     2)) + "[kWh]."
             PSO.Diesel_Cf = 0
-
-    else:
-        # 太陽光と風力の発電量が需要より少ない時の処理
-        # ディーゼルを使うかチェック
-        # ディーゼルを使用しない。
+    else:   # * 太陽光と風力の発電量が需要より少ない時の処理 = ディーゼルを使うかチェック
+        # * ディーゼルを使用しない。
         if PSO.p_battery > (PSO.np_demand[PSO.h] - PSO.pv - PSO.wind) and PSO.p_battery - (
                 PSO.np_demand[PSO.h] - PSO.pv - PSO.wind) > PSO.battery_min:
             PSO.battery_discharging_power = PSO.np_demand[PSO.h] - \
@@ -79,15 +77,17 @@ def flowchart(PSO):
             PSO.flowchart_root = str(PSO.h) + "h: " + "discharging " + str(
                 round(PSO.np_demand[PSO.h] - PSO.pv - PSO.wind, 3)) + "[kWh]."
             PSO.Diesel_Cf = 0
-        else:  # ディーゼルを使用する。
+        # * ディーゼルを使用する。
+        else:
             PSO.battery_discharging_power = PSO.p_battery - PSO.battery_min
             PSO.p_diesel = PSO.np_demand[PSO.h] - PSO.pv - \
                 PSO.wind - (PSO.p_battery - PSO.battery_min)
-            # ディーゼルの容量を超える場合はエラー
+            # * ディーゼルの容量を超える場合はエラー
             if PSO.p_diesel > PSO.diesel_max:
                 PSO.check = False
                 PSO.flowchart_root = str(
                     PSO.h) + "h: " + "Error! diesel capacity is over!"
+            # * ディーゼル使用可
             else:
                 PSO.flowchart_root = str(
                     PSO.h) + "h: " + "discharging " + str(
@@ -98,7 +98,8 @@ def flowchart(PSO):
                         PSO.p_diesel,
                         3)) + "[kWh]."
                 PSO.p_battery = PSO.battery_min
-                # PSO.diesel_maxは大きすぎるため、ひとまず,rated output per unit =1.8に置き換え
+                # TODO PSO.diesel_maxは大きすぎるため、ひとまず,rated output per
+                # unit=1.8に置き換え
                 PSO.Diesel_fc = PSO.initial_cost_parameters["Diesel_Adg"] * \
                     1.8 + PSO.initial_cost_parameters["Diesel_Bdg"] * PSO.p_diesel
                 PSO.Diesel_Cf = PSO.initial_cost_parameters["Diesel_Pf"] * \
@@ -122,11 +123,14 @@ def flowchart(PSO):
     return PSO.parameters, PSO.check, PSO.flowchart_root
 
 
+# * トータルコスト計算関数
 def calc_cost(variables, initial_cost_parameters):
-    Et = [variables["pv_power_sum"] + variables["wind_power_sum"] + variables["diesel_power_sum"] + variables["battery_discharging_power_sum"]] * 20
+    Et = [variables["pv_power_sum"] + variables["wind_power_sum"] +
+          variables["diesel_power_sum"] + variables["battery_discharging_power_sum"]] * 20
     cost_parameters = {
         "(1+r)^t": (
-            1 + np.array(
+            1 +
+            np.array(
                 initial_cost_parameters["r[yen/year]"]) ** initial_cost_parameters["operation_year"]).tolist(),
     }
     SCL = (((variables["pv_cap_max"] / 1000) * (np.array(initial_cost_parameters["It_PV_1kW[yen/year]"]) + np.array(initial_cost_parameters["Mt_PV_1kW[yen/year]"])))
@@ -146,10 +150,10 @@ def calc_cost(variables, initial_cost_parameters):
 
 
 def loop_flowchart(PSO):
-    # からのデータフレームを作成
+    # * データフレームを作成
     PSO.df = pd.DataFrame()
-
-    for PSO.h in range(len(PSO.Target_input.index)):
+    number_of_loops = len(PSO.Target_input.index)
+    for PSO.h in range(number_of_loops):
         PSO.flowchart_parameters, PSO.check, PSO.flowchart_root = flowchart(
             PSO)
 
@@ -175,10 +179,10 @@ def loop_flowchart(PSO):
         PSO.df = pd.concat(
             [PSO.df, pd.io.json.json_normalize(PSO.flowchart_parameters)])
 
-    # ループ内でfalseがあるかチェック　falseがあるとtotal_checkにfalseが入る。
+    # * ループ内でfalseがあるかチェック　falseがあるとtotal_checkにfalseが入る。
     PSO.total_check = not(False in PSO.df['Check'].values)
 
-    # Count iterations of florchart
+    # * Count iterations of florchart
     Success_loops, Failed_loops = 0, 0
     if PSO.total_check:
         Success_loops = 1
