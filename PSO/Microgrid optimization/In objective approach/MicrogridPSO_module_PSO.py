@@ -28,7 +28,7 @@ def initialize__PSO_particles(n_particles):
         [float('inf') for _ in range(n_particles)])
 
     global_best_fitness_value = float('inf')
-    range_vector = [5000, 20, 25, 13]
+    range_vector = [5000, 20, 40, 20]
     particle_position_vector = \
         np.array([np.array([np.random.rand() * range_vector[0], np.random.rand() * range_vector[1],
                             np.random.rand() * range_vector[2], np.random.rand() * range_vector[3]])
@@ -55,7 +55,7 @@ def constrained(position):
     y = position[1]
     z = position[2]
     v = position[3]
-    if 7000 > x > 0 and 30 > y > 0 and 30 > z > 0 and 15 > v > 0:
+    if 7000 > x > 0 and 30 > y > 0 and 50 > z > 0 and 30 > v > 0:
         judge = True
     else:
         judge = False
@@ -83,8 +83,10 @@ def iterations_PSO(PSO):
         "particle:",
         PSO.particle)
 
-# * PSO calc
-    
+    # * PSO calc
+
+    PSO.all_particle_data = np.zeros(shape=(n_iterations, n_particles, 4))
+    PSO.particle_data = np.zeros(shape=(n_particles, 4))
     particle_position_vector = PSO.particle["particle_position_vector"]
     PSO.personal_best_position = PSO.particle["personal_best_position"]
     PSO.personal_best_fitness_value = PSO.particle["personal_best_fitness_value"]
@@ -234,7 +236,9 @@ def iterations_PSO(PSO):
                         "variables": variables,
                         "SCL": PSO.SCL,
                         "SEL": PSO.SEL}
-            
+            # * 粒子の位置情報を格納
+            PSO.particle_data[i] = particle_position_vector[i]
+
             if iteration != 0:
                 previous_velocity_vector[i] = new_velocity
             new_velocity = (
@@ -261,8 +265,11 @@ def iterations_PSO(PSO):
         PSO.global_best_list.append(PSO.global_best_position)
         PSO.iteration_list.append(iteration)
         PSO.best_cost_list.append(PSO.global_best_fitness_value)
-
+        PSO.all_particle_data[iteration] = PSO.particle_data
         iteration = iteration + 1
+
+    # * 全粒子情報をnpyファイルとして出力
+    np.save("Result/all_particle_data.npy", PSO.all_particle_data)
 
     print(
         "The best position is ",
