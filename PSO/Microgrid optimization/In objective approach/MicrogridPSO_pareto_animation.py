@@ -8,19 +8,18 @@ import matplotlib
 def Make_animation(npy_file):
     all_particle_data = np.load(npy_file)
     n_iterations = all_particle_data.shape[0]
-    n_particles = all_particle_data.shape[1]
     all_particle_data = all_particle_data.T
     nfr = n_iterations  # Number of frames
-    fps = 1 # Frame per sec
+    fps = 1  # Frame per sec
     xs = []
     ys = []
     zs = []
     ws = []
-    for particle in range(n_iterations):
-        xs.append(all_particle_data[0].T[particle])
-        ys.append(all_particle_data[1].T[particle])
-        zs.append(all_particle_data[2].T[particle])
-        ws.append(all_particle_data[3].T[particle])
+    for iteration in range(n_iterations):
+        xs.append(all_particle_data[0].T[iteration])
+        ys.append(all_particle_data[1].T[iteration])
+        zs.append(all_particle_data[2].T[iteration])
+        ws.append(all_particle_data[3].T[iteration])
 
     fig = plt.figure(figsize=(12, 8))
 
@@ -75,7 +74,7 @@ def Make_animation(npy_file):
         sct4.set_3d_properties(wa[ifrm])
 
     plt.tight_layout()
-    ani = animation.FuncAnimation(fig, update, nfr, fargs=(xs,ys,zs,ws), interval=1000/fps)
+    ani = animation.FuncAnimation(fig, update, nfr, fargs=(xs, ys, zs, ws), interval=1000 / fps)
     fn = 'Result/plot_3d_scatter_funcanimation'
     ani.save(fn + '.gif', fps=fps)
     s = ani.to_jshtml()
