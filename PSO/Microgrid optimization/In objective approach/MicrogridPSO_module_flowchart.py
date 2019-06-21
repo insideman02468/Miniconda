@@ -188,17 +188,23 @@ def calc_cost(variables, initial_cost_parameters):
 
     # TODO O&Mの計算法を修正
     SCL = (
-        ((variables["pv_cap_max"] / 1000) * (np.array(initial_cost_parameters["It_PV_1kW[yen/year]"]) + np.array(initial_cost_parameters["Mt_PV_1kW[yen/year]"])))
-        + (variables["wind_cap_max"]
-           * (np.array(initial_cost_parameters["It_Wind_1kW[yen/year]"]) + np.array(initial_cost_parameters["Mt_Wind_1kW[yen/year]"])))
-        + (variables["diesel_max"]
-           * (np.array(initial_cost_parameters["It_Diesel_1kW[yen/year]"]) + np.array(initial_cost_parameters["Mt_Diesel_1kW[yen/year]"])))
+        # * PV
+        (variables["pv_cap_max"] / 1000 * np.array(initial_cost_parameters["It_PV_1kW[yen/year]"])
+         + np.array([variables["pv_power_sum"]] * 20) * np.array(initial_cost_parameters["Mt_PV_1kW[yen/year]"]))
+        # * Wind
+        + (variables["wind_cap_max"] * np.array(initial_cost_parameters["It_Wind_1kW[yen/year]"])
+            + np.array([variables["wind_power_sum"]] * 20) * np.array(initial_cost_parameters["Mt_Wind_1kW[yen/year]"]))
+        # * Diesel
+        + (variables["diesel_max"] * np.array(initial_cost_parameters["It_Diesel_1kW[yen/year]"])
+            + np.array(initial_cost_parameters["Mt_Diesel_1kW[yen/year]"]) * (
+                np.array([variables["wind_power_sum"]] * 20))
+            + np.array(variables["Diesel_Cf_sum"] * 20))
+        # Battery
         + (variables["battery_cap_max"]
-           * (np.array(initial_cost_parameters["It_Battery_1kW[yen/year]"]) + np.array(initial_cost_parameters["Mt_Battery_1kW[yen/year]"])))
-        + np.array(variables["Diesel_Cf_sum"] * 20)
-        - np.array(variables["trashed_power_sum"] * 20) * np.array(initial_cost_parameters["Sell_income_from_trashed[kWh/yen]"])
-    ) \
-        / cost_parameters["(1+r)^t"]
+           * np.array(initial_cost_parameters["It_Battery_1kW[yen/year]"]) + np.array(initial_cost_parameters["Mt_Battery_1kW[yen/year]"]))
+        - np.array(variables["trashed_power_sum"] * 20) * np.array(
+            initial_cost_parameters["Sell_income_from_trashed[kWh/yen]"])
+    ) / cost_parameters["(1+r)^t"]
 
     SEL = np.array(Et) / cost_parameters["(1+r)^t"]
     COST = np.sum(SCL)
