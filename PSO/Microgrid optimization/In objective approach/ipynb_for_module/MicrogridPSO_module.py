@@ -71,15 +71,17 @@ class MicrogridPSO_initialize:
         self.wind_capacity_per_unit = initial_input_values["wind_capacity_per_unit"]
         self.np_demand = self.number_demand *             self.Target_input['Demand[kWh]'].values
         self.np_PV_efficient = self.Target_input['Forecast_PV[Wh/unit]'].values/1000
-        self.np_Wind_efficient = self.Target_input['Forecast_PV[Wh/unit]'].values/1000
+        self.np_Wind_efficient = self.Target_input['Forecast_Wind[Wh/unit]'].values
 
     # update fitness_variable_parameters
     def update_fitness_variable_parameters(self, fitness_variable_parameters):
         self.pv_cap_max = fitness_variable_parameters['pv_cap_max']
+        self.wind_cap_max = fitness_variable_parameters['wind_cap_max']
         self.battery_cap_max = fitness_variable_parameters['battery_cap_max']
         self.diesel_max = fitness_variable_parameters['diesel_max']
 
         self.fitness_variable_parameters = {"pv_cap_max": self.pv_cap_max,
+                                            "wind_cap_max": self.wind_cap_max,
                                             "battery_cap_max": self.battery_cap_max,
                                             "diesel_max": self.diesel_max
                                             }

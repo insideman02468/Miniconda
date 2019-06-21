@@ -74,6 +74,8 @@ def Make_animation(npy_file):
         sct4.set_data(ya[ifrm], za[ifrm])
         sct4.set_3d_properties(wa[ifrm])
 
+    plt.tight_layout()
+    ani = animation.FuncAnimation(fig, update, nfr, fargs=(xs,ys,zs,ws), interval=1000/fps)
     fn = 'Result/plot_3d_scatter_funcanimation'
     ani.save(fn + '.gif', fps=fps)
     s = ani.to_jshtml()
