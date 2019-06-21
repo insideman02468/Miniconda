@@ -75,8 +75,6 @@ def Make_animation(npy_file):
 
     plt.tight_layout()
     ani = animation.FuncAnimation(fig, update, nfr, fargs=(xs, ys, zs, ws), interval=1000 / fps)
-    fn = 'Result/plot_3d_scatter_funcanimation'
-    ani.save(fn + '.gif', fps=fps)
     s = ani.to_jshtml()
     with open('Result/plot_3d_scatter_funcanimation.html', 'w') as f:
         f.write(s)
