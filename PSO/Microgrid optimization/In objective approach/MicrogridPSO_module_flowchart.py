@@ -43,8 +43,47 @@ def flowchart(PSO):
 
     # * 太陽光の発電量が需要より多いか確認
     if PSO.pv + PSO.wind > PSO.np_demand[PSO.h]:
-        # * 太陽光の発電量が需要より多い時の処理
+        # * 太陽光と風力の発電量が需要より多い時の処理
+        # TODO 改善箇所
         # * バッテリーが過充電にならないかのチェック、過充電の場合、余った電気は捨てる。
+        # * 風力発電が需要を上回るときの処理
+        SOC = (PSO.p_battery / PSO.battery_cap_max) * 100
+        battery_need = PSO.battery_cap_max * ((PSO.initial_input_values["SOC_start[%]"] - SOC) / 100)
+        if PSO.wind > PSO.np_demand[PSO.h]:
+            # * バッテリのSOCを確認 スタート時よりより多いか確認
+            if SOC > PSO.initial_input_values["SOC_start[%]"]:
+                # * バッテリーを充電する必要がない
+                PSO.wind = PSO.np_demand[PSO.h]
+                PSO.pv = 0
+            else:
+                # * バッテリーを充電する必要がある
+                # * バッテリーを目標値まで充電可能か判断 風力が充電する電力 battery_need
+                if PSO.wind - PSO.np_demand[PSO.h] > battery_need:
+                    # * 目標SOCまで充電可能
+                    PSO.wind = PSO.np_demand[PSO.h] + battery_need
+                    PSO.pv = 0
+                else:
+                    # * 目標SOCまで充電できないので、足りない分、太陽光が使えるかチェック
+                    battery_need_pv = PSO.wind - PSO.np_demand[PSO.h]
+                    if PSO.pv > battery_need - battery_need_pv:
+                        # * PVで賄える
+                        PSO.pv = battery_need - battery_need_pv
+                    # ! else
+                        # * PVで賄えない場合、ともに最大出力
+        # * 風力発電が需要を上回らないときの処理、つまり、需要はカバーできるが、風力はフル出力でPVの発電量を調整
+        else:
+            # * バッテリーを充電する必要があるか確認
+            if SOC > PSO.initial_input_values["SOC_start[%]"]:
+                # * 充電する必要がなく、需要の不足分だけPVを発電する
+                PSO.pv = PSO.np_demand[PSO.h] - PSO.wind
+            else:
+                # * 充電する必要があり、需要の不足分だけPVを発電した後、バッテリに充電する。
+                if PSO.pv - (PSO.np_demand[PSO.h] - PSO.wind) > battery_need:
+                    # * 目標SOCまで充電できる
+                    PSO.pv = PSO.np_demand[PSO.h] - PSO.wind + battery_need
+                # ! else:
+                    # * 目標SOCまで充電できない
+
         if PSO.p_battery + (PSO.pv + PSO.wind -
                             PSO.np_demand[PSO.h]) < PSO.battery_max:
             PSO.p_battery = PSO.p_battery + \
