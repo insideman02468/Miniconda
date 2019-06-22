@@ -28,7 +28,7 @@ def initialize__PSO_particles(n_particles):
         [float('inf') for _ in range(n_particles)])
 
     global_best_fitness_value = float('inf')
-    range_vector = [10000, 100, 100, 100]
+    range_vector = [10000, 20, 100, 30]
     particle_position_vector = \
         np.array([np.array([np.random.rand() * range_vector[0], np.random.rand() * range_vector[1],
                             np.random.rand() * range_vector[2], np.random.rand() * range_vector[3]])
@@ -55,7 +55,7 @@ def constrained(position):
     y = position[1]
     z = position[2]
     v = position[3]
-    if 20000 > x > 0 and 200 > y > 0 and 200 > z > 0 and 200 > v > 0:
+    if 20000 > x > 0 and 40 > y > 0 and 200 > z > 0 and 60 > v > 0:
         judge = True
     else:
         judge = False

@@ -77,7 +77,10 @@ def flowchart(PSO):
                     PSO.wind = PSO.np_demand[PSO.h] + PSO.battery_need
                     PSO.pv = 0
                     PSO.flowchart_root = str(
-                        PSO.h) + "h: " + "Battery charge only wind" + str(round(PSO.battery_need, 3))
+                        PSO.h) + "h: " + "Battery fullcharge only wind " + str(
+                        round(
+                            PSO.battery_need,
+                            3) + "[kWh]")
                 else:
                     # * 目標SOCまで充電できないので、足りない分、太陽光が使えるかチェック
                     PSO.battery_need_pv = PSO.battery_need - \
@@ -86,11 +89,13 @@ def flowchart(PSO):
                         # * PVで賄える
                         PSO.pv = PSO.battery_need_pv
                         PSO.flowchart_root = str(
-                            PSO.h) + "h: " + "Battery charge wind and PV" + str(round(PSO.battery_need, 3))
+                            PSO.h) + "h: " + "Battery fullcharge wind and PV" + str(round(PSO.battery_need, 3))
                     else:
                         # * PVで賄えない場合、ともに最大出力であまりを充電
                         PSO.battery_need = PSO.pv + \
                             PSO.wind - PSO.np_demand[PSO.h]
+                        PSO.flowchart_root = str(
+                            PSO.h) + "h: " + "Battery charge wind and PV" + str(round(PSO.battery_need, 3))
 
         # * 風力発電が需要を上回らないときの処理、つまり、需要はカバーできるが、風力はフル出力でPVの発電量を調整
         else:
@@ -98,15 +103,21 @@ def flowchart(PSO):
             if SOC > PSO.initial_input_values["SOC_max[%]"]:
                 # * 充電する必要がなく、需要の不足分だけPVを発電する
                 PSO.pv = PSO.np_demand[PSO.h] - PSO.wind
+                PSO.flowchart_root = str(
+                    PSO.h) + "h: "
             else:
                 # * 充電する必要があり、需要の不足分だけPVを発電した後、バッテリに充電する。
                 if PSO.pv - (PSO.np_demand[PSO.h] -
                              PSO.wind) > PSO.battery_need:
                     # * 目標SOCまで充電できる
                     PSO.pv = PSO.np_demand[PSO.h] - PSO.wind + PSO.battery_need
+                    PSO.flowchart_root = str(
+                        PSO.h) + "h: " + "Battery fullcharge PV" + str(round(PSO.battery_need, 3))
                 else:
                     # * 目標SOCまで充電できない
                     PSO.battery_need = PSO.pv + PSO.wind - PSO.np_demand[PSO.h]
+                    PSO.flowchart_root = str(
+                        PSO.h) + "h: " + "Battery charge PV" + str(round(PSO.battery_need, 3))
 
     else:
         # * 太陽光と風力の発電量が需要より少ない時の処理
