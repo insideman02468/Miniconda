@@ -159,6 +159,7 @@ def Make_animation(npy_file):
     writer = Writer(fps=fps / 2, metadata=dict(artist='Yuichiro'))
 
     ani.save('Result/plot_3d_scatter_funcanimation.mp4', writer=writer)
+    ani.save('Result/plot_3d_scatter_funcanimation.gif', writer="imagemagick")
 
     s = ani.to_jshtml()
     with open('Result/plot_3d_scatter_funcanimation.html', 'w') as f:
