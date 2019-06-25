@@ -80,7 +80,7 @@ def flowchart(PSO):
                         PSO.h) + "h: " + "Battery fullcharge only wind " + str(
                         round(
                             PSO.battery_need,
-                            3) + "[kWh]")
+                            3)) + "[kWh]"
                 else:
                     # * 目標SOCまで充電できないので、足りない分、太陽光が使えるかチェック
                     PSO.battery_need_pv = PSO.battery_need - \

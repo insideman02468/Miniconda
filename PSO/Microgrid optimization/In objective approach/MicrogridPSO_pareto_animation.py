@@ -24,29 +24,35 @@ def Make_animation(npy_file):
     range_max = [100, 100, 100, 100, 100000000]
 
     nfr = n_iterations  # Number of frames
-    fps = 1  # Frame per sec
+    fps = 3  # Frame per sec
     xs = []
     ys = []
     zs = []
     ws = []
     vs = []
+
+    us = []
     for iteration in range(n_iterations):
         xs.append(all_particle_data_with_cost[0].T[iteration] / 1000)
         ys.append(all_particle_data_with_cost[1].T[iteration])
         zs.append(all_particle_data_with_cost[2].T[iteration])
         ws.append(all_particle_data_with_cost[3].T[iteration])
         vs.append(all_particle_data_with_cost[4].T[iteration])
+        us.append(all_particle_data_with_cost[5].T[iteration])
 
     def Convert_int(ndarray):
         return ndarray.astype(np.int32)
 
     vs = list(map(Convert_int, vs))
+    us = list(map(Convert_int, us))
 
     # %% Create Color Map
     cmap = get_cmap('jet')
-    y_tick_max = ceil((np.max(vs) - (2e+7)), 1e+7)
-    y_tick_min = floor(np.min(vs), 1e+7)
-    norm = matplotlib.colors.LogNorm(vmin=y_tick_min, vmax=y_tick_max)
+    # y_tick_max = ceil(np.max(vs), 1e+7)
+    y_tick_max = ceil(np.min(us) + (1e+7), 1e+7)
+    y_tick_min = floor(np.min(us), 1e+7) + (5e+6)
+    # norm = matplotlib.colors.LogNorm(vmin=y_tick_min, vmax=y_tick_max)
+    norm = matplotlib.colors.Normalize(vmin=y_tick_min, vmax=y_tick_max)
     mappable = ScalarMappable(cmap=cmap, norm=norm)
     mappable._A = []
 
@@ -57,7 +63,7 @@ def Make_animation(npy_file):
     ax3 = fig.add_subplot(235, projection=Axes3D.name)
     ax4 = fig.add_subplot(236, projection=Axes3D.name)
 
-    def update(ifrm, xa, ya, za, wa, va):
+    def update(ifrm, xa, ya, za, wa, va, ua):
         ax1.cla()
         ax2.cla()
         ax3.cla()
@@ -68,13 +74,13 @@ def Make_animation(npy_file):
                 xa[ifrm][particle],
                 ya[ifrm][particle],
                 za[ifrm][particle],
-                s=70,
+                s=100,
                 color=cmap(
                     norm(
                         va[ifrm][particle])),
                 marker='o')
             ax1.set_title('Particle XYZ iterations = ' + str(ifrm + 1) +
-                          " Global best =" + str(np.max(va[ifrm])), y=1.0)
+                          " Global best =" + str(np.max(ua[ifrm])), y=1.0)
             ax1.set_xlim(0, range_max[0])
             ax1.set_ylim(0, range_max[1])
             ax1.set_zlim(0, range_max[2])
@@ -86,7 +92,7 @@ def Make_animation(npy_file):
                 xa[ifrm][particle],
                 ya[ifrm][particle],
                 wa[ifrm][particle],
-                s=70,
+                s=100,
                 color=cmap(
                     norm(
                         va[ifrm][particle])),
@@ -95,7 +101,7 @@ def Make_animation(npy_file):
                           str(ifrm +
                               1) +
                           " Global best =" +
-                          str(np.max(va[ifrm])), y=1.0)
+                          str(np.max(ua[ifrm])), y=1.0)
             ax2.set_xlim(0, range_max[0])
             ax2.set_ylim(0, range_max[1])
             ax2.set_zlim(0, range_max[3])
@@ -107,16 +113,16 @@ def Make_animation(npy_file):
                 xa[ifrm][particle],
                 za[ifrm][particle],
                 wa[ifrm][particle],
-                s=70,
+                s=100,
                 color=cmap(
                     norm(
                         va[ifrm][particle])),
                 marker='o')
-            ax3.set_title('Particle movement XXW iterations = ' +
+            ax3.set_title('Particle movement XZW iterations = ' +
                           str(ifrm +
                               1) +
                           " Global best =" +
-                          str(np.max(va[ifrm])), y=1.0)
+                          str(np.max(ua[ifrm])), y=1.0)
             ax3.set_xlim(0, range_max[0])
             ax3.set_ylim(0, range_max[2])
             ax3.set_zlim(0, range_max[3])
@@ -129,7 +135,7 @@ def Make_animation(npy_file):
                 ya[ifrm][particle],
                 za[ifrm][particle],
                 wa[ifrm][particle],
-                s=70,
+                s=100,
                 color=cmap(
                     norm(
                         va[ifrm][particle])),
@@ -138,21 +144,20 @@ def Make_animation(npy_file):
                           str(ifrm +
                               1) +
                           " Global best =" +
-                          str(np.max(va[ifrm])), y=1.0)
+                          str(np.max(ua[ifrm])), y=1.0)
             ax4.set_xlim(0, range_max[1])
             ax4.set_ylim(0, range_max[2])
             ax4.set_zlim(0, range_max[3])
-            ax4.set_xlabel('Wind capacity[W]')
+            ax4.set_xlabel('Wind capacity[kW]')
             ax4.set_ylabel('Battery capacity[kW]')
             ax4.set_zlabel('Diesel capacity[kW]')
 
-    colorbar_ax = fig.add_axes([0.24, 0.1, 0.05, 0.7])
+    colorbar_ax = fig.add_axes([0.3, 0.1, 0.05, 0.7])
     colorbar = fig.colorbar(mappable, cax=colorbar_ax, shrink=0.5)
     colorbar.set_label('Objective function[yen]')
 
-    ani = animation.FuncAnimation(
-        fig, update, nfr, fargs=(
-            xs, ys, zs, ws, vs), interval=1000 / fps)
+    ani = animation.FuncAnimation(fig, update, nfr, fargs=(
+        xs, ys, zs, ws, vs, us), interval=1000 / fps)
 
     # Set up formatting for the movie files
     Writer = animation.writers['ffmpeg']

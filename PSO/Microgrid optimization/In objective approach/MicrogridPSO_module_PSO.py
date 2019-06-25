@@ -86,9 +86,9 @@ def iterations_PSO(PSO):
     # * PSO calc
 
     PSO.all_particle_data = np.zeros(shape=(n_iterations, n_particles, 4))
-    PSO.all_particle_data_with_cost = np.zeros(shape=(n_iterations, n_particles, 5))
+    PSO.all_particle_data_with_cost = np.zeros(shape=(n_iterations, n_particles, 6))
     PSO.particle_data = np.zeros(shape=(n_particles, 4))
-    PSO.particle_data_with_cost = np.zeros(shape=(n_particles, 5))
+    PSO.particle_data_with_cost = np.zeros(shape=(n_particles, 6))
     particle_position_vector = PSO.particle["particle_position_vector"]
     PSO.personal_best_position = PSO.particle["personal_best_position"]
     PSO.personal_best_fitness_value = PSO.particle["personal_best_fitness_value"]
@@ -240,7 +240,7 @@ def iterations_PSO(PSO):
                         "SEL": PSO.SEL}
             # * 粒子の位置情報を格納
             PSO.particle_data[i] = particle_position_vector[i]
-            PSO.particle_data_with_cost[i] = np.append(particle_position_vector[i], total_cost)
+            PSO.particle_data_with_cost[i] = np.append(np.append(particle_position_vector[i], total_cost), PSO.global_best_fitness_value)
 
             if iteration != 0:
                 previous_velocity_vector[i] = new_velocity
