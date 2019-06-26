@@ -10,15 +10,6 @@ from multiprocessing import Pool
 
 def Multifunc(x):
 
-    print('モジュール名：{}'.format(__name__))
-
-    # Multiprocessingのコア数とハイパーパラメータの定義
-    n_iterations_candidates = [3, 3, 3, 3]
-    n_particles_candidates = [3, 3, 3, 3]
-    w_particles_candidates = [0.7, 0.6, 0.5, 0.4]
-    c1_particles_candidates = [0.5, 0.5, 0.5, 0.5]
-    c2_particles_candidates = [0.7, 0.7, 0.7, 0.7]
-
     # CSVを読み込みインスタンスを作成。
     PSO = MicrogridPSO_initialize("Target_input.csv")
 
@@ -149,6 +140,14 @@ def Multifunc(x):
 
 
 if __name__ == "__main__":
+    print('モジュール名：{}'.format(__name__))
+    
+    # Multiprocessingのコア数とハイパーパラメータの定義
+    n_iterations_candidates = [3, 3, 3, 3]
+    n_particles_candidates = [3, 3, 3, 3]
+    w_particles_candidates = [0.7, 0.6, 0.5, 0.4]
+    c1_particles_candidates = [0.5, 0.5, 0.5, 0.5]
+    c2_particles_candidates = [0.7, 0.7, 0.7, 0.7]
     core_number = 4
     p = Pool(core_number)
     p.map(Multifunc, range(core_number))
