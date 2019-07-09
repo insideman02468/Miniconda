@@ -6,6 +6,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import datetime
 from multiprocessing import Pool
+import time
 
 
 def Multifunc(x):
@@ -140,14 +141,15 @@ def Multifunc(x):
 
 
 if __name__ == "__main__":
+    start = time.time()
     print('モジュール名：{}'.format(__name__))
-    
     # Multiprocessingのコア数とハイパーパラメータの定義
-    n_iterations_candidates = [3, 3, 3, 3]
-    n_particles_candidates = [3, 3, 3, 3]
-    w_particles_candidates = [0.7, 0.6, 0.5, 0.4]
-    c1_particles_candidates = [0.5, 0.5, 0.5, 0.5]
-    c2_particles_candidates = [0.7, 0.7, 0.7, 0.7]
+    n_iterations_candidates = [20] * 16
+    n_particles_candidates = [7] * 16
+    w_particles_candidates = [0.6] * 16
+    c1_particles_candidates = [0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.5, 1.5, 1.5, 1.5, 2.0, 2.0, 2.0, 2.0]
+    c2_particles_candidates = [0.5, 1.0, 1.5, 2.0, 0.5, 1.0, 1.5, 2.0, 0.5, 1.0, 1.5, 2.0, 0.5, 1.0, 1.5, 2.0]
     core_number = 4
     p = Pool(core_number)
-    p.map(Multifunc, range(core_number))
+    p.map(Multifunc, range(len(n_iterations_candidates)))
+    print("time:{}".format(time.time() - start))

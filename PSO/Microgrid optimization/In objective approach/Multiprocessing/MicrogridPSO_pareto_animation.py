@@ -167,5 +167,5 @@ def Make_animation(npy_file, PSO):
     ani.save("Result/" + str(PSO.Multiprocessing_parameters["state_name"]) + 'plot_3d_scatter_funcanimation.gif', writer="imagemagick")
 
     s = ani.to_jshtml()
-    with open('Result/plot_3d_scatter_funcanimation.html', 'w') as f:
+    with open("Result/" + str(PSO.Multiprocessing_parameters["state_name"]) + 'plot_3d_scatter_funcanimation.html', 'w') as f:
         f.write(s)

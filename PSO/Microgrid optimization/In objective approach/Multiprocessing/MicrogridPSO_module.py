@@ -8,7 +8,7 @@ class MicrogridPSO_initialize:
 
         # input CSV
         self.Target_input = pd.read_csv(
-            "Target_input.csv", encoding="UTF-8").set_index(['Time'])
+            Target_input, encoding="UTF-8").set_index(['Time'])
 
         # get CSV column length
         self.Target_input_len = len(self.Target_input)
